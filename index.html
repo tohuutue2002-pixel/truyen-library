@@ -26,9 +26,9 @@
   --sweet: #f0c060;
   --shadow: rgba(0,0,0,0.4);
 }
- 
+
 * { margin:0; padding:0; box-sizing:border-box; }
- 
+
 body {
   background: var(--bg);
   color: var(--text);
@@ -39,7 +39,7 @@ body {
     radial-gradient(ellipse at 85% 90%, rgba(240,122,176,0.12) 0%, transparent 45%),
     radial-gradient(ellipse at 50% 50%, rgba(122,184,240,0.05) 0%, transparent 60%);
 }
- 
+
 /* ── HEADER ── */
 header {
   padding: 3rem 2rem 2.5rem;
@@ -56,7 +56,7 @@ header::after {
 }
 .site-emoji { font-size: 2.5rem; display: block; margin-bottom: 0.5rem; animation: float 3s ease-in-out infinite; }
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
- 
+
 .site-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2.2rem, 6vw, 3.8rem);
@@ -92,10 +92,10 @@ header::after {
   background-clip: text;
 }
 .stat-label { font-size: 0.68rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.1em; }
- 
+
 /* ── CONTAINER ── */
 .container { max-width: 1150px; margin: 0 auto; padding: 2rem 1.5rem; }
- 
+
 /* ── SEARCH ── */
 .search-wrap { position: relative; margin-bottom: 1.5rem; }
 .search-icon { position: absolute; left: 1.1rem; top: 50%; transform: translateY(-50%); font-size: 1rem; opacity: 0.4; }
@@ -116,7 +116,7 @@ header::after {
   box-shadow: 0 0 0 3px rgba(181,123,238,0.15);
 }
 #searchInput::placeholder { color: var(--text-faint); }
- 
+
 /* ── FILTER BOX ── */
 .filter-box {
   background: var(--surface);
@@ -136,7 +136,7 @@ header::after {
   margin-bottom: 0.6rem;
 }
 .tag-group { display: flex; flex-wrap: wrap; gap: 0.45rem; }
- 
+
 .ftag {
   padding: 0.3rem 0.85rem;
   border-radius: 50px;
@@ -148,22 +148,22 @@ header::after {
   user-select: none;
 }
 .ftag:hover { transform: translateY(-1px); }
- 
+
 .ftag.ket-thuc  { background: rgba(240,122,176,0.1); color: var(--pink); border-color: rgba(240,122,176,0.25); }
 .ftag.ket-thuc.on  { background: var(--pink); color: #1a0010; border-color: var(--pink); }
- 
+
 .ftag.do-ngot  { background: rgba(240,192,96,0.1); color: var(--gold); border-color: rgba(240,192,96,0.25); }
 .ftag.do-ngot.on  { background: var(--gold); color: #1a1000; border-color: var(--gold); }
- 
+
 .ftag.the-loai { background: rgba(181,123,238,0.1); color: var(--purple-light); border-color: rgba(181,123,238,0.25); }
 .ftag.the-loai.on { background: var(--purple); color: white; border-color: var(--purple); }
- 
+
 .ftag.nguon    { background: rgba(122,184,240,0.1); color: var(--blue); border-color: rgba(122,184,240,0.25); }
 .ftag.nguon.on    { background: var(--blue); color: #001020; border-color: var(--blue); }
- 
+
 .ftag.tinh-trang { background: rgba(122,240,184,0.1); color: var(--green); border-color: rgba(122,240,184,0.25); }
 .ftag.tinh-trang.on { background: var(--green); color: #001a10; border-color: var(--green); }
- 
+
 .filter-actions { display: flex; gap: 0.6rem; margin-top: 1rem; flex-wrap: wrap; }
 .clear-btn {
   padding: 0.3rem 0.9rem;
@@ -177,7 +177,7 @@ header::after {
   transition: all 0.15s;
 }
 .clear-btn:hover { border-color: var(--purple); color: var(--purple-light); }
- 
+
 /* ── TOOLBAR ── */
 .toolbar {
   display: flex;
@@ -200,7 +200,7 @@ header::after {
   cursor: pointer;
   outline: none;
 }
- 
+
 /* ── NOVEL GRID ── */
 .novel-grid {
   display: grid;
@@ -208,7 +208,7 @@ header::after {
   gap: 1.1rem;
 }
 @media(max-width:680px){ .novel-grid { grid-template-columns: 1fr; } }
- 
+
 .novel-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -238,7 +238,7 @@ header::after {
   border-color: rgba(181,123,238,0.3);
 }
 .novel-card:hover::before { opacity: 1; }
- 
+
 .card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.7rem; margin-bottom: 0.4rem; }
 .novel-title {
   font-family: 'Cormorant Garamond', serif;
@@ -259,9 +259,9 @@ header::after {
 .ending-BE  { background: rgba(122,184,240,0.15); color: var(--blue); border: 1px solid rgba(122,184,240,0.3); }
 .ending-OE  { background: rgba(240,192,96,0.15); color: var(--gold); border: 1px solid rgba(240,192,96,0.3); }
 .ending-Mo  { background: rgba(122,240,184,0.15); color: var(--green); border: 1px solid rgba(122,240,184,0.3); }
- 
+
 .novel-author { font-size: 0.78rem; color: var(--text-faint); margin-bottom: 0.75rem; font-style: italic; }
- 
+
 .sweetness {
   display: flex;
   align-items: center;
@@ -283,7 +283,7 @@ header::after {
   transition: width 0.4s ease;
 }
 .sweet-score { font-size: 0.7rem; color: var(--gold); font-weight: 700; }
- 
+
 .novel-desc {
   font-size: 0.83rem;
   color: var(--text-dim);
@@ -306,7 +306,7 @@ header::after {
 .ctag-gold   { background: rgba(240,192,96,0.12); color: var(--gold); }
 .ctag-blue   { background: rgba(122,184,240,0.12); color: var(--blue); }
 .ctag-green  { background: rgba(122,240,184,0.12); color: var(--green); }
- 
+
 .card-footer {
   display: flex;
   justify-content: space-between;
@@ -327,7 +327,7 @@ header::after {
 .s-drop  { background: rgba(150,150,150,0.1); color: #888; }
 .card-link { color: var(--purple-light); text-decoration: none; font-weight: 600; font-size: 0.75rem; }
 .card-link:hover { color: var(--pink-light); }
- 
+
 /* ── EMPTY ── */
 .empty {
   grid-column: 1/-1;
@@ -337,7 +337,7 @@ header::after {
 }
 .empty-icon { font-size: 3.5rem; margin-bottom: 1rem; display: block; }
 .empty-text { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; }
- 
+
 /* ── ADD FORM ── */
 .add-section {
   background: var(--surface);
@@ -375,7 +375,7 @@ header::after {
 .fi:focus { border-color: var(--purple); }
 .fi::placeholder { color: var(--text-faint); }
 .fi-full { width: 100%; margin-bottom: 0.8rem; }
- 
+
 .sweet-input-row {
   display: flex;
   align-items: center;
@@ -388,7 +388,7 @@ header::after {
   accent-color: var(--purple);
 }
 .sweet-val { font-size: 0.82rem; color: var(--gold); font-weight: 700; min-width: 1.5rem; text-align: center; }
- 
+
 .form-tag-section { margin-bottom: 1rem; }
 .form-tag-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-faint); margin-bottom: 0.5rem; }
 .form-tag-group { display: flex; flex-wrap: wrap; gap: 0.4rem; }
@@ -408,7 +408,7 @@ header::after {
 }
 .ftag-check input { display: none; }
 .ftag-check.on { background: var(--purple); color: white; border-color: var(--purple); }
- 
+
 /* ── AI FETCH ── */
 .ai-fetch-box {
   background: linear-gradient(135deg, rgba(181,123,238,0.08), rgba(240,122,176,0.06));
@@ -452,7 +452,7 @@ header::after {
 .divider-or::before, .divider-or::after {
   content: ''; flex: 1; height: 1px; background: var(--border);
 }
- 
+
 .fetch-tabs { display:flex; gap:0.4rem; margin-bottom:0.8rem; }
 .fetch-tab {
   padding:0.3rem 0.9rem;
@@ -468,7 +468,7 @@ header::after {
 }
 .fetch-tab.active { background:var(--purple); color:white; border-color:var(--purple); }
 .fetch-tab:hover:not(.active) { border-color:var(--purple); color:var(--purple-light); }
- 
+
 .delete-btn {
   background: transparent;
   border: 1px solid rgba(240,122,176,0.2);
@@ -480,10 +480,10 @@ header::after {
   transition: all 0.15s;
 }
 .delete-btn:hover { opacity: 1; background: rgba(240,122,176,0.15); border-color: var(--pink); }
- 
+
 .ftag.new-tag { border-style: dashed; }
 .ftag-check.new-tag { border-style: dashed; }
- 
+
 .submit-btn {
   background: linear-gradient(135deg, var(--purple), var(--pink));
   color: white;
@@ -553,11 +553,11 @@ header::after {
   transition: opacity 0.15s, transform 0.15s;
 }
 .modal-confirm:hover { opacity: 0.88; transform: translateY(-1px); }
- 
+
 </style>
 </head>
 <body>
- 
+
 <!-- HEADER -->
 <header>
   <span class="site-emoji">🌸</span>
@@ -570,15 +570,15 @@ header::after {
     <div class="stat"><div class="stat-num" id="s-hoan">0</div><div class="stat-label">Hoàn ✅</div></div>
   </div>
 </header>
- 
+
 <div class="container">
- 
+
   <!-- SEARCH -->
   <div class="search-wrap">
     <span class="search-icon">🔍</span>
     <input type="text" id="searchInput" placeholder="Tìm tên truyện, tác giả, mô tả...">
   </div>
- 
+
   <!-- FILTERS -->
   <div class="filter-box">
     <div class="filter-row">
@@ -605,7 +605,7 @@ header::after {
       <button class="clear-btn" onclick="clearAll()">✕ Xoá bộ lọc</button>
     </div>
   </div>
- 
+
   <!-- TOOLBAR -->
   <div class="toolbar">
     <div class="result-count" id="resultCount"></div>
@@ -616,24 +616,24 @@ header::after {
       <option value="chapters">Nhiều chương nhất</option>
     </select>
   </div>
- 
+
   <!-- GRID -->
   <div class="novel-grid" id="novelGrid"></div>
- 
+
   <!-- ADD FORM -->
   <div class="add-section">
     <div class="add-title">✦ Thêm truyện vào thư viện</div>
- 
+
     <!-- AI LINK FETCH -->
     <div class="ai-fetch-box">
       <div class="ai-fetch-label">🤖 AI tự điền thông tin</div>
- 
+
       <!-- TAB SWITCH -->
       <div class="fetch-tabs">
         <button class="fetch-tab active" id="tab-link" onclick="switchTab('link')">🔗 Dán link</button>
         <button class="fetch-tab" id="tab-text" onclick="switchTab('text')">📋 Dán nội dung trang</button>
       </div>
- 
+
       <!-- TAB: LINK -->
       <div id="panel-link">
         <div class="ai-fetch-row">
@@ -641,7 +641,7 @@ header::after {
           <button class="fetch-btn" onclick="fetchFromLink()" id="fetchBtn">✨ Tự điền</button>
         </div>
       </div>
- 
+
       <!-- TAB: PASTE TEXT -->
       <div id="panel-text" style="display:none">
         <div style="font-size:0.75rem;color:var(--text-faint);margin-bottom:0.5rem">
@@ -652,12 +652,12 @@ header::after {
           <button class="fetch-btn" onclick="fetchFromText()" id="fetchBtnText">✨ Phân tích & tự điền</button>
         </div>
       </div>
- 
+
       <div id="fetch-status" class="fetch-status"></div>
     </div>
- 
+
     <div class="divider-or"><span>hoặc nhập tay</span></div>
- 
+
     <div class="form-grid">
       <input class="fi" id="f-title" placeholder="Tên truyện *">
       <input class="fi" id="f-author" placeholder="Tác giả">
@@ -665,14 +665,14 @@ header::after {
       <input class="fi" id="f-link" placeholder="Link đọc (tuỳ chọn)">
     </div>
     <textarea class="fi fi-full" id="f-desc" rows="2" placeholder="Mô tả ngắn..."></textarea>
- 
+
     <div class="sweet-input-row">
       <label>🍯 Độ ngọt:</label>
       <input type="range" id="f-sweet" min="1" max="10" value="7" oninput="document.getElementById('sweet-display').textContent=this.value">
       <span class="sweet-val" id="sweet-display">7</span>
       <span style="font-size:0.75rem;color:var(--text-faint)">/10</span>
     </div>
- 
+
     <div class="form-tag-section">
       <div class="form-tag-label">Kết thúc</div>
       <div class="form-tag-group" id="fc-ket-thuc"></div>
@@ -693,12 +693,12 @@ header::after {
       <div class="form-tag-label">Tình trạng</div>
       <div class="form-tag-group" id="fc-tinh-trang"></div>
     </div>
- 
+
     <button class="submit-btn" onclick="addNovel()">🌸 Thêm vào thư viện</button>
   </div>
- 
+
 </div>
- 
+
 <script>
 // ══════════════════════════════════════════
 // TAG CONFIG
@@ -710,20 +710,20 @@ const TAGS = {
   'nguon':      ['Chinese', 'Korean', 'Japanese', 'Vietnamese', 'Thai'],
   'tinh-trang': ['Hoàn', 'Đang ra', 'Drop'],
 };
- 
+
 // ══════════════════════════════════════════
 // DỮ LIỆU MẪU
 // ══════════════════════════════════════════
 let novels = [];
- 
+
 let active = new Set();
- 
+
 // ══════════════════════════════════════════
 // SUPABASE CONFIG
 // ══════════════════════════════════════════
 const SUPABASE_URL = 'https://jpeysiqxbufgizcdcjle.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_UJUd9p0TKfM2aZA1zPwVgg_yP46yj98';
- 
+
 async function sbFetch(path, options = {}) {
   const res = await fetch(SUPABASE_URL + '/rest/v1/' + path, {
     ...options,
@@ -742,7 +742,7 @@ async function sbFetch(path, options = {}) {
   const text = await res.text();
   return text ? JSON.parse(text) : null;
 }
- 
+
 async function loadNovels() {
   try {
     const data = await sbFetch('novels?order=created_at.desc&select=*');
@@ -761,7 +761,7 @@ async function loadNovels() {
     console.error('Load lỗi:', e);
   }
 }
- 
+
 // ══════════════════════════════════════════
 // BUILD FILTER UI
 // ══════════════════════════════════════════
@@ -775,7 +775,7 @@ function buildFilters() {
       el.onclick = () => { el.classList.toggle('on'); active.has(t) ? active.delete(t) : active.add(t); render(); };
       wrap.appendChild(el);
     });
- 
+
     // Form checkboxes
     const fw = document.getElementById('fc-' + cat);
     if (!fw) return;
@@ -788,14 +788,14 @@ function buildFilters() {
     });
   }
 }
- 
+
 function clearAll() {
   active.clear();
   document.querySelectorAll('.ftag.on').forEach(e => e.classList.remove('on'));
   document.getElementById('searchInput').value = '';
   render();
 }
- 
+
 // ══════════════════════════════════════════
 // TAG COLOR HELPER
 // ══════════════════════════════════════════
@@ -807,7 +807,7 @@ function tagColor(t) {
   if (['Hoàn','Đang ra','Drop'].includes(t)) return 'ctag-green';
   return 'ctag-purple';
 }
- 
+
 function endingBadge(tags) {
   for (const e of ['HE','BE','OE','Mở']) {
     if (tags.includes(e)) return `<span class="ending-badge ending-${e.replace('ở','o')}">${e}</span>`;
@@ -824,39 +824,39 @@ function statusLabel(tags) {
   if (tags.includes('Đang ra')) return 'Đang ra';
   return 'Drop';
 }
- 
+
 // ══════════════════════════════════════════
 // RENDER
 // ══════════════════════════════════════════
 function render() {
   const q = document.getElementById('searchInput').value.toLowerCase().trim();
   const sort = document.getElementById('sortSel').value;
- 
+
   let list = novels.filter(n => {
     const ms = !q || n.title.toLowerCase().includes(q) || n.author.toLowerCase().includes(q) || n.desc.toLowerCase().includes(q);
     const mt = [...active].every(t => n.tags.includes(t));
     return ms && mt;
   });
- 
+
   if (sort === 'sweet')    list.sort((a,b) => b.sweet - a.sweet);
   else if (sort === 'title')    list.sort((a,b) => a.title.localeCompare(b.title,'vi'));
   else if (sort === 'chapters') list.sort((a,b) => b.chapters - a.chapters);
- 
+
   // Stats
   document.getElementById('s-total').textContent = novels.length;
   document.getElementById('s-he').textContent = novels.filter(n=>n.tags.includes('HE')).length;
   document.getElementById('s-be').textContent = novels.filter(n=>n.tags.includes('BE')).length;
   document.getElementById('s-hoan').textContent = novels.filter(n=>n.tags.includes('Hoàn')).length;
- 
+
   document.getElementById('resultCount').innerHTML =
     `Hiển thị <strong>${list.length}</strong> / ${novels.length} bộ truyện`;
- 
+
   const grid = document.getElementById('novelGrid');
   if (!list.length) {
     grid.innerHTML = `<div class="empty"><span class="empty-icon">🌸</span><div class="empty-text">Không tìm thấy truyện phù hợp...</div></div>`;
     return;
   }
- 
+
   grid.innerHTML = list.map(n => {
     const displayTags = n.tags.filter(t => !['Hoàn','Đang ra','Drop'].includes(t));
     const pct = (n.sweet / 10) * 100;
@@ -888,7 +888,7 @@ function render() {
     </div>`;
   }).join('');
 }
- 
+
 // ══════════════════════════════════════════
 // ADD NOVEL
 // ══════════════════════════════════════════
@@ -901,24 +901,24 @@ async function addNovel() {
   const description = document.getElementById('f-desc').value.trim() || 'Chưa có mô tả.';
   const sweet       = parseInt(document.getElementById('f-sweet').value) || 5;
   const tags        = [...document.querySelectorAll('.ftag-check input:checked')].map(c=>c.value);
- 
+
   const submitBtn = document.querySelector('.submit-btn');
   submitBtn.disabled = true;
   submitBtn.textContent = '⏳ Đang lưu...';
- 
+
   try {
     await sbFetch('novels', {
       method: 'POST',
       prefer: 'return=minimal',
       body: JSON.stringify({ title, author, chapters, description, sweet, tags, link })
     });
- 
+
     ['f-title','f-author','f-chapters','f-link'].forEach(id => document.getElementById(id).value = '');
     document.getElementById('f-desc').value = '';
     document.getElementById('f-sweet').value = 7;
     document.getElementById('sweet-display').textContent = '7';
     document.querySelectorAll('.ftag-check input').forEach(c => { c.checked = false; c.parentElement.classList.remove('on'); });
- 
+
     await loadNovels();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   } catch(e) {
@@ -928,12 +928,12 @@ async function addNovel() {
     submitBtn.textContent = '🌸 Thêm vào thư viện';
   }
 }
- 
+
 // ══════════════════════════════════════════
 // DELETE NOVEL
 // ══════════════════════════════════════════
 let pendingDeleteId = null;
- 
+
 function deleteNovel(id, e) {
   e.stopPropagation();
   const novel = novels.find(n => String(n.id) === String(id));
@@ -942,12 +942,12 @@ function deleteNovel(id, e) {
   document.getElementById('modal-title').textContent = `Xoá "${novel.title}"?`;
   document.getElementById('deleteModal').style.display = 'flex';
 }
- 
+
 function closeModal() {
   document.getElementById('deleteModal').style.display = 'none';
   pendingDeleteId = null;
 }
- 
+
 async function confirmDelete() {
   if (pendingDeleteId === null) return;
   try {
@@ -960,7 +960,7 @@ async function confirmDelete() {
     alert('Xoá thất bại 😢 ' + e.message);
   }
 }
- 
+
 // ══════════════════════════════════════════
 // TAB SWITCH
 // ══════════════════════════════════════════
@@ -972,7 +972,7 @@ function switchTab(tab) {
   document.getElementById('fetch-status').className = 'fetch-status';
   document.getElementById('fetch-status').textContent = '';
 }
- 
+
 // ══════════════════════════════════════════
 // AI AUTO-FILL FROM PASTED TEXT
 // ══════════════════════════════════════════
@@ -982,20 +982,20 @@ async function fetchFromText() {
     setStatus('error', '⚠️ Dán nội dung trang truyện vào trước nhé!');
     return;
   }
- 
+
   const btn = document.getElementById('fetchBtnText');
   btn.disabled = true;
   setStatus('loading', '🤖 AI đang phân tích nội dung...');
- 
+
   const allTags = Object.values(TAGS).flat();
- 
+
   const prompt = `Bạn là trợ lý tổng hợp truyện đam mỹ/BL tiếng Việt. Dưới đây là nội dung được copy từ một trang truyện. Hãy phân tích và trích xuất thông tin.
- 
+
 NỘI DUNG TRANG:
 ---
 ${rawText.slice(0, 4000)}
 ---
- 
+
 Trả về JSON với đúng format sau (KHÔNG thêm gì khác, chỉ JSON thuần):
 {
   "title": "tên truyện chính xác từ nội dung",
@@ -1007,7 +1007,7 @@ Trả về JSON với đúng format sau (KHÔNG thêm gì khác, chỉ JSON thu�
   "new_tags": [],
   "link": ""
 }
- 
+
 Quy tắc:
 - "desc" phải lấy ĐÚNG từ phần giới thiệu/synopsis trong nội dung, không tự bịa
 - Ưu tiên chọn tags từ danh sách có sẵn: ${allTags.join(', ')}
@@ -1017,14 +1017,14 @@ Quy tắc:
 - Tình trạng: Hoàn / Đang ra / Drop
 - Nguồn: Chinese / Korean / Japanese / Vietnamese / Thai
 - Thêm trường "new_tags": [] vào JSON cho các tag mới chưa có trong danh sách`;
- 
+
   try {
     const text = await callGemini(prompt);
     const jsonMatch = text.match(/\{[\s\S]*\}/);
     if (!jsonMatch) throw new Error('parse fail');
- 
+
     const info = JSON.parse(jsonMatch[0]);
- 
+
     document.getElementById('f-title').value    = info.title    || '';
     document.getElementById('f-author').value   = info.author   || '';
     document.getElementById('f-chapters').value = info.chapters || '';
@@ -1032,91 +1032,104 @@ Quy tắc:
     document.getElementById('f-link').value     = info.link     || '';
     document.getElementById('f-sweet').value    = info.sweet    || 7;
     document.getElementById('sweet-display').textContent = info.sweet || 7;
- 
+
     // Thêm tag mới vào hệ thống nếu có
     const newTags = info.new_tags || [];
     newTags.forEach(t => addNewTag(t));
- 
+
     // Tick tất cả tags (cũ + mới)
     document.querySelectorAll('.ftag-check input').forEach(cb => {
       cb.checked = (info.tags || []).includes(cb.value) || newTags.includes(cb.value);
       cb.parentElement.classList.toggle('on', cb.checked);
     });
- 
+
     const newTagMsg = newTags.length ? ` Thêm ${newTags.length} tag mới: ${newTags.join(', ')}` : '';
     setStatus('success', `✅ Xong! Kiểm tra lại mô tả rồi bấm "Thêm vào thư viện" nhé~${newTagMsg}`);
   } catch(e) {
-    setStatus('error', '❌ Không phân tích được. Thử copy lại nhiều nội dung hơn nha!');
+    setStatus('error', '❌ AI không phân tích được. Thử copy lại nhiều nội dung hơn nha!');
   } finally {
     btn.disabled = false;
   }
 }
- 
+
 // ══════════════════════════════════════════
 // AI AUTO-FILL FROM LINK
 // ══════════════════════════════════════════
-async function callGemini(prompt) {
-  const OR_KEY = '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';
-  const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + OR_KEY,
-      'HTTP-Referer': 'https://tohuutue2002-pixel.github.io/truyen-library',
-      'X-Title': 'Truyen Library'
-    },
-    body: JSON.stringify({
-      model: 'google/gemini-2.0-flash-exp:free',
-      messages: [{ role: 'user', content: prompt }],
-      temperature: 0.3
-    })
-  });
-  if (!res.ok) {
-    const err = await res.text();
-    throw new Error('OpenRouter error: ' + err);
-  }
-  const data = await res.json();
-  return data.choices?.[0]?.message?.content || '';
-}
- 
 async function fetchFromLink() {
   const url = document.getElementById('f-autolink').value.trim();
   if (!url || !url.startsWith('http')) {
     setStatus('error', '⚠️ Vui lòng dán link hợp lệ bắt đầu bằng https://...');
     return;
   }
- 
+
   const btn = document.getElementById('fetchBtn');
   btn.disabled = true;
-  setStatus('loading', '🤖 AI đang đọc trang truyện...');
- 
+  setStatus('loading', '🤖 Đang đọc trang truyện...');
+
   const allTags = Object.values(TAGS).flat();
-  const prompt = `Bạn là trợ lý tổng hợp truyện đam mỹ/BL tiếng Việt. Dựa vào URL này hãy trích xuất hoặc đoán thông tin truyện: ${url}
- 
+
+  try {
+    // Dùng AllOrigins proxy để đọc nội dung trang
+    const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(url);
+    const proxyRes = await fetch(proxyUrl);
+    const proxyData = await proxyRes.json();
+    const rawHtml = proxyData.contents || '';
+
+    // Lấy text từ HTML, bỏ tags
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(rawHtml, 'text/html');
+    // Xóa script, style
+    doc.querySelectorAll('script, style, nav, footer, header').forEach(e => e.remove());
+    const pageText = doc.body?.innerText || doc.body?.textContent || '';
+    const cleanText = pageText.replace(/\s+/g, ' ').trim().slice(0, 5000);
+
+    if (!cleanText || cleanText.length < 50) throw new Error('Không đọc được nội dung');
+
+    setStatus('loading', '🤖 AI đang phân tích nội dung...');
+
+    // Gọi Anthropic API (chạy trong Claude artifact)
+    const prompt = `Bạn là trợ lý tổng hợp truyện đam mỹ/BL tiếng Việt. Dưới đây là nội dung trang truyện. Hãy trích xuất thông tin.
+
+NỘI DUNG:
+---
+${cleanText}
+---
+URL gốc: ${url}
+
 Trả về JSON thuần (không markdown, không backtick):
 {
-  "title": "tên truyện",
+  "title": "tên truyện chính xác",
   "author": "tên tác giả",
   "chapters": 0,
-  "desc": "mô tả ngắn 2-3 câu tiếng Việt",
+  "desc": "mô tả/tóm tắt NGUYÊN VĂN từ trang, 3-5 câu",
   "sweet": 7,
   "tags": [],
   "new_tags": [],
   "link": "${url}"
 }
- 
+
 Quy tắc:
+- desc phải lấy ĐÚNG từ phần tóm tắt/giới thiệu, không tự bịa
 - Ưu tiên tags từ danh sách: ${allTags.join(', ')}
-- new_tags: tối đa 5 tag mới quan trọng chưa có trong danh sách trên
-- HE/BE/OE = kết thúc, sweet 1-10 (10=cực ngọt), Hoàn/Đang ra/Drop = tình trạng
+- new_tags: tối đa 5 tag mới quan trọng chưa có trong danh sách
+- HE/BE/OE = kết thúc, sweet 1-10, Hoàn/Đang ra/Drop = tình trạng
 - Nguồn: Chinese/Korean/Japanese/Vietnamese/Thai`;
- 
-  try {
-    const text = await callGemini(prompt);
+
+    const apiRes = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-6',
+        max_tokens: 1000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const apiData = await apiRes.json();
+    const text = (apiData.content || []).filter(b => b.type === 'text').map(b => b.text).join('');
     const jsonMatch = text.match(/\{[\s\S]*\}/);
     if (!jsonMatch) throw new Error('parse fail');
     const info = JSON.parse(jsonMatch[0]);
- 
+
     document.getElementById('f-title').value    = info.title    || '';
     document.getElementById('f-author').value   = info.author   || '';
     document.getElementById('f-chapters').value = info.chapters || '';
@@ -1124,14 +1137,14 @@ Quy tắc:
     document.getElementById('f-link').value     = info.link     || url;
     document.getElementById('f-sweet').value    = info.sweet    || 7;
     document.getElementById('sweet-display').textContent = info.sweet || 7;
- 
+
     const newTags = info.new_tags || [];
     newTags.forEach(t => addNewTag(t));
     document.querySelectorAll('.ftag-check input').forEach(cb => {
       cb.checked = (info.tags || []).includes(cb.value) || newTags.includes(cb.value);
       cb.parentElement.classList.toggle('on', cb.checked);
     });
- 
+
     const newTagMsg = newTags.length ? ` Thêm ${newTags.length} tag mới: ${newTags.join(', ')}` : '';
     setStatus('success', `✅ Đã điền xong! Kiểm tra lại rồi bấm "Thêm vào thư viện" nhé~${newTagMsg}`);
   } catch(e) {
@@ -1140,7 +1153,7 @@ Quy tắc:
     btn.disabled = false;
   }
 }
- 
+
 // ══════════════════════════════════════════
 // ADD NEW TAG DYNAMICALLY
 // ══════════════════════════════════════════
@@ -1149,10 +1162,10 @@ function addNewTag(tag) {
   if (!tag) return;
   const allExisting = Object.values(TAGS).flat();
   if (allExisting.includes(tag)) return; // đã có rồi
- 
+
   // Thêm vào data
   TAGS['the-loai'].push(tag);
- 
+
   // Thêm vào bộ lọc filter UI
   const filterWrap = document.getElementById('f-the-loai');
   const el = document.createElement('span');
@@ -1160,7 +1173,7 @@ function addNewTag(tag) {
   el.textContent = '✨ ' + tag;
   el.onclick = () => { el.classList.toggle('on'); active.has(tag) ? active.delete(tag) : active.add(tag); render(); };
   filterWrap.appendChild(el);
- 
+
   // Thêm vào form checkbox
   const formWrap = document.getElementById('fc-the-loai');
   const lbl = document.createElement('label');
@@ -1169,13 +1182,13 @@ function addNewTag(tag) {
   lbl.querySelector('input').onchange = function(){ lbl.classList.toggle('on', this.checked); };
   formWrap.appendChild(lbl);
 }
- 
+
 function setStatus(type, msg) {
   const el = document.getElementById('fetch-status');
   el.className = 'fetch-status ' + type;
   el.textContent = msg;
 }
- 
+
 // ══════════════════════════════════════════
 // INIT
 // ══════════════════════════════════════════
@@ -1195,6 +1208,6 @@ loadNovels();
     </div>
   </div>
 </div>
- 
+
 </body>
 </html>
