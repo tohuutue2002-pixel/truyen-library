@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌸 Thư Viện Truyện Hoàn</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0f0a14;
+  --surface: #1a1024;
+  --surface2: #221633;
+  --border: rgba(200,150,255,0.12);
+  --purple: #b57bee;
+  --purple-light: #d4a8ff;
+  --pink: #f07ab0;
+  --pink-light: #ffb3d1;
+  --gold: #f0c060;
+  --blue: #7ab8f0;
+  --green: #7af0b8;
+  --text: #ede0ff;
+  --text-dim: rgba(237,224,255,0.5);
+  --text-faint: rgba(237,224,255,0.25);
+  --he: #f07ab0;
+  --be: #7ab8f0;
+  --sweet: #f0c060;
+  --shadow: rgba(0,0,0,0.4);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito', sans-serif;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse at 15% 10%, rgba(181,123,238,0.15) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 90%, rgba(240,122,176,0.12) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 50%, rgba(122,184,240,0.05) 0%, transparent 60%);
+}
+
+/* ── HEADER ── */
+header {
+  padding: 3rem 2rem 2.5rem;
+  text-align: center;
+  position: relative;
+}
+header::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--purple), var(--pink), transparent);
+  margin-top: 2rem;
+  opacity: 0.4;
+}
+.site-emoji { font-size: 2.5rem; display: block; margin-bottom: 0.5rem; animation: float 3s ease-in-out infinite; }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+
+.site-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--purple-light), var(--pink-light), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+.site-sub {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+}
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+.stat { text-align: center; }
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--purple-light), var(--pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.stat-label { font-size: 0.68rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.1em; }
+
+/* ── CONTAINER ── */
+.container { max-width: 1150px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+/* ── SEARCH ── */
+.search-wrap { position: relative; margin-bottom: 1.5rem; }
+.search-icon { position: absolute; left: 1.1rem; top: 50%; transform: translateY(-50%); font-size: 1rem; opacity: 0.4; }
+#searchInput {
+  width: 100%;
+  padding: 0.9rem 1rem 0.9rem 3rem;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  color: var(--text);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+#searchInput:focus {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(181,123,238,0.15);
+}
+#searchInput::placeholder { color: var(--text-faint); }
+
+/* ── FILTER BOX ── */
+.filter-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.8rem;
+}
+.filter-row { margin-bottom: 1rem; }
+.filter-row:last-child { margin-bottom: 0; }
+.filter-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-faint);
+  margin-bottom: 0.6rem;
+}
+.tag-group { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+
+.ftag {
+  padding: 0.3rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: all 0.15s;
+  user-select: none;
+}
+.ftag:hover { transform: translateY(-1px); }
+
+.ftag.ket-thuc  { background: rgba(240,122,176,0.1); color: var(--pink); border-color: rgba(240,122,176,0.25); }
+.ftag.ket-thuc.on  { background: var(--pink); color: #1a0010; border-color: var(--pink); }
+
+.ftag.do-ngot  { background: rgba(240,192,96,0.1); color: var(--gold); border-color: rgba(240,192,96,0.25); }
+.ftag.do-ngot.on  { background: var(--gold); color: #1a1000; border-color: var(--gold); }
+
+.ftag.the-loai { background: rgba(181,123,238,0.1); color: var(--purple-light); border-color: rgba(181,123,238,0.25); }
+.ftag.the-loai.on { background: var(--purple); color: white; border-color: var(--purple); }
+
+.ftag.nguon    { background: rgba(122,184,240,0.1); color: var(--blue); border-color: rgba(122,184,240,0.25); }
+.ftag.nguon.on    { background: var(--blue); color: #001020; border-color: var(--blue); }
+
+.ftag.tinh-trang { background: rgba(122,240,184,0.1); color: var(--green); border-color: rgba(122,240,184,0.25); }
+.ftag.tinh-trang.on { background: var(--green); color: #001a10; border-color: var(--green); }
+
+.filter-actions { display: flex; gap: 0.6rem; margin-top: 1rem; flex-wrap: wrap; }
+.clear-btn {
+  padding: 0.3rem 0.9rem;
+  font-size: 0.78rem;
+  font-family: 'Nunito', sans-serif;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.clear-btn:hover { border-color: var(--purple); color: var(--purple-light); }
+
+/* ── TOOLBAR ── */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+.result-count { font-size: 0.83rem; color: var(--text-dim); }
+.result-count strong { color: var(--purple-light); }
+.sort-select {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  padding: 0.35rem 0.8rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  cursor: pointer;
+  outline: none;
+}
+
+/* ── NOVEL GRID ── */
+.novel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1.1rem;
+}
+@media(max-width:680px){ .novel-grid { grid-template-columns: 1fr; } }
+
+.novel-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.3rem;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  animation: popIn 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+@keyframes popIn {
+  from { opacity:0; transform:translateY(10px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.novel-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--purple), var(--pink));
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.novel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5), 0 0 0 1px rgba(181,123,238,0.2);
+  border-color: rgba(181,123,238,0.3);
+}
+.novel-card:hover::before { opacity: 1; }
+
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.7rem; margin-bottom: 0.4rem; }
+.novel-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text);
+}
+.ending-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 50px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ending-HE  { background: rgba(240,122,176,0.15); color: var(--pink); border: 1px solid rgba(240,122,176,0.3); }
+.ending-BE  { background: rgba(122,184,240,0.15); color: var(--blue); border: 1px solid rgba(122,184,240,0.3); }
+.ending-OE  { background: rgba(240,192,96,0.15); color: var(--gold); border: 1px solid rgba(240,192,96,0.3); }
+.ending-Mo  { background: rgba(122,240,184,0.15); color: var(--green); border: 1px solid rgba(122,240,184,0.3); }
+
+.novel-author { font-size: 0.78rem; color: var(--text-faint); margin-bottom: 0.75rem; font-style: italic; }
+
+.sweetness {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+.sweet-label { font-size: 0.7rem; color: var(--text-faint); }
+.sweet-bar {
+  flex: 1;
+  height: 4px;
+  background: var(--surface2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.sweet-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--purple), var(--pink), var(--gold));
+  transition: width 0.4s ease;
+}
+.sweet-score { font-size: 0.7rem; color: var(--gold); font-weight: 700; }
+
+.novel-desc {
+  font-size: 0.83rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+  margin-bottom: 0.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.9rem; }
+.ctag {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+}
+.ctag-purple { background: rgba(181,123,238,0.12); color: var(--purple-light); }
+.ctag-pink   { background: rgba(240,122,176,0.12); color: var(--pink); }
+.ctag-gold   { background: rgba(240,192,96,0.12); color: var(--gold); }
+.ctag-blue   { background: rgba(122,184,240,0.12); color: var(--blue); }
+.ctag-green  { background: rgba(122,240,184,0.12); color: var(--green); }
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--text-faint);
+}
+.status-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+.s-hoan  { background: rgba(122,240,184,0.12); color: var(--green); }
+.s-dang  { background: rgba(240,192,96,0.12); color: var(--gold); }
+.s-drop  { background: rgba(150,150,150,0.1); color: #888; }
+.card-link { color: var(--purple-light); text-decoration: none; font-weight: 600; font-size: 0.75rem; }
+.card-link:hover { color: var(--pink-light); }
+
+/* ── EMPTY ── */
+.empty {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 5rem 2rem;
+  color: var(--text-faint);
+}
+.empty-icon { font-size: 3.5rem; margin-bottom: 1rem; display: block; }
+.empty-text { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; }
+
+/* ── ADD FORM ── */
+.add-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.8rem;
+  margin-top: 2.5rem;
+}
+.add-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--purple-light);
+  margin-bottom: 1.2rem;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+@media(max-width:580px){ .form-grid { grid-template-columns: 1fr; } }
+.fi {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.88rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.fi:focus { border-color: var(--purple); }
+.fi::placeholder { color: var(--text-faint); }
+.fi-full { width: 100%; margin-bottom: 0.8rem; }
+
+.sweet-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+.sweet-input-row label { font-size: 0.82rem; color: var(--text-dim); white-space: nowrap; }
+.sweet-input-row input[type=range] {
+  flex: 1;
+  accent-color: var(--purple);
+}
+.sweet-val { font-size: 0.82rem; color: var(--gold); font-weight: 700; min-width: 1.5rem; text-align: center; }
+
+.form-tag-section { margin-bottom: 1rem; }
+.form-tag-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-faint); margin-bottom: 0.5rem; }
+.form-tag-group { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.ftag-check {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.28rem 0.7rem;
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  transition: all 0.15s;
+  user-select: none;
+}
+.ftag-check input { display: none; }
+.ftag-check.on { background: var(--purple); color: white; border-color: var(--purple); }
+
+/* ── AI FETCH ── */
+.ai-fetch-box {
+  background: linear-gradient(135deg, rgba(181,123,238,0.08), rgba(240,122,176,0.06));
+  border: 1px solid rgba(181,123,238,0.25);
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+}
+.ai-fetch-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--purple-light);
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.03em;
+}
+.ai-fetch-row { display: flex; gap: 0.6rem; }
+.ai-fetch-row .fi { flex: 1; }
+.fetch-btn {
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+  color: white;
+  border: none;
+  padding: 0.65rem 1.2rem;
+  border-radius: 8px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.fetch-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+.fetch-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.fetch-status { margin-top: 0.6rem; font-size: 0.8rem; min-height: 1.2rem; }
+.fetch-status.loading { color: var(--purple-light); }
+.fetch-status.success { color: var(--green); }
+.fetch-status.error   { color: var(--pink); }
+.divider-or {
+  display: flex; align-items: center; gap: 0.8rem;
+  margin: 1rem 0; color: var(--text-faint); font-size: 0.75rem;
+}
+.divider-or::before, .divider-or::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
+
+.fetch-tabs { display:flex; gap:0.4rem; margin-bottom:0.8rem; }
+.fetch-tab {
+  padding:0.3rem 0.9rem;
+  border-radius:50px;
+  font-size:0.78rem;
+  font-weight:700;
+  font-family:'Nunito',sans-serif;
+  cursor:pointer;
+  border:1.5px solid var(--border);
+  background:transparent;
+  color:var(--text-dim);
+  transition:all 0.15s;
+}
+.fetch-tab.active { background:var(--purple); color:white; border-color:var(--purple); }
+.fetch-tab:hover:not(.active) { border-color:var(--purple); color:var(--purple-light); }
+
+.delete-btn {
+  background: transparent;
+  border: 1px solid rgba(240,122,176,0.2);
+  border-radius: 6px;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: all 0.15s;
+}
+.delete-btn:hover { opacity: 1; background: rgba(240,122,176,0.15); border-color: var(--pink); }
+
+.ftag.new-tag { border-style: dashed; }
+.ftag-check.new-tag { border-style: dashed; }
+
+.submit-btn {
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.submit-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+/* ── CONFIRM MODAL ── */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  display: flex; align-items: center; justify-content: center;
+  animation: fadeIn 0.15s ease;
+}
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+.modal-box {
+  background: var(--surface);
+  border: 1px solid rgba(240,122,176,0.3);
+  border-radius: 16px;
+  padding: 1.8rem;
+  max-width: 360px;
+  width: 90%;
+  text-align: center;
+  animation: popIn 0.2s ease;
+}
+.modal-icon { font-size: 2.2rem; margin-bottom: 0.8rem; }
+.modal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--text);
+}
+.modal-sub { font-size: 0.82rem; color: var(--text-dim); margin-bottom: 1.4rem; line-height: 1.5; }
+.modal-actions { display: flex; gap: 0.7rem; justify-content: center; }
+.modal-cancel {
+  padding: 0.55rem 1.4rem;
+  border-radius: 50px;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.modal-cancel:hover { border-color: var(--purple); color: var(--purple-light); }
+.modal-confirm {
+  padding: 0.55rem 1.4rem;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(135deg, #e05585, #c03060);
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.modal-confirm:hover { opacity: 0.88; transform: translateY(-1px); }
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <span class="site-emoji">🌸</span>
+  <div class="site-title">Thư Viện Truyện Hoàn</div>
+  <div class="site-sub">Tổng hợp các bộ truyện hoàn</div>
+  <div class="stats-row">
+    <div class="stat"><div class="stat-num" id="s-total">0</div><div class="stat-label">Bộ truyện</div></div>
+    <div class="stat"><div class="stat-num" id="s-he">0</div><div class="stat-label">HE 🩷</div></div>
+    <div class="stat"><div class="stat-num" id="s-be">0</div><div class="stat-label">BE 💙</div></div>
+    <div class="stat"><div class="stat-num" id="s-hoan">0</div><div class="stat-label">Hoàn ✅</div></div>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- SEARCH -->
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="Tìm tên truyện, tác giả, mô tả...">
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filter-box">
+    <div class="filter-row">
+      <div class="filter-label">Kết thúc</div>
+      <div class="tag-group" id="f-ket-thuc"></div>
+    </div>
+    <div class="filter-row">
+      <div class="filter-label">Độ ngọt</div>
+      <div class="tag-group" id="f-do-ngot"></div>
+    </div>
+    <div class="filter-row">
+      <div class="filter-label">Thể loại / Trope</div>
+      <div class="tag-group" id="f-the-loai"></div>
+    </div>
+    <div class="filter-row">
+      <div class="filter-label">Nguồn gốc</div>
+      <div class="tag-group" id="f-nguon"></div>
+    </div>
+    <div class="filter-row">
+      <div class="filter-label">Tình trạng</div>
+      <div class="tag-group" id="f-tinh-trang"></div>
+    </div>
+    <div class="filter-actions">
+      <button class="clear-btn" onclick="clearAll()">✕ Xoá bộ lọc</button>
+    </div>
+  </div>
+
+  <!-- TOOLBAR -->
+  <div class="toolbar">
+    <div class="result-count" id="resultCount"></div>
+    <select class="sort-select" id="sortSel" onchange="render()">
+      <option value="default">Mới thêm</option>
+      <option value="sweet">Ngọt nhất</option>
+      <option value="title">Tên A-Z</option>
+      <option value="chapters">Nhiều chương nhất</option>
+    </select>
+  </div>
+
+  <!-- GRID -->
+  <div class="novel-grid" id="novelGrid"></div>
+
+  <!-- ADD FORM -->
+  <div class="add-section">
+    <div class="add-title">✦ Thêm truyện vào thư viện</div>
+
+    <!-- AI LINK FETCH -->
+    <div class="ai-fetch-box">
+      <div class="ai-fetch-label">🤖 AI tự điền thông tin</div>
+
+      <!-- TAB SWITCH -->
+      <div class="fetch-tabs">
+        <button class="fetch-tab active" id="tab-link" onclick="switchTab('link')">🔗 Dán link</button>
+        <button class="fetch-tab" id="tab-text" onclick="switchTab('text')">📋 Dán nội dung trang</button>
+      </div>
+
+      <!-- TAB: LINK -->
+      <div id="panel-link">
+        <div class="ai-fetch-row">
+          <input class="fi" id="f-autolink" placeholder="https://wattpad.com/... hoặc bất kỳ trang truyện nào">
+          <button class="fetch-btn" onclick="fetchFromLink()" id="fetchBtn">✨ Tự điền</button>
+        </div>
+      </div>
+
+      <!-- TAB: PASTE TEXT -->
+      <div id="panel-text" style="display:none">
+        <div style="font-size:0.75rem;color:var(--text-faint);margin-bottom:0.5rem">
+          Vào trang truyện → bôi đen toàn bộ nội dung (Ctrl+A) → Copy (Ctrl+C) → dán vào đây
+        </div>
+        <textarea class="fi" id="f-pastetext" rows="5" placeholder="Dán nội dung trang Wattpad, AO3, hay bất kỳ trang nào vào đây...&#10;&#10;(Tên truyện, tác giả, mô tả, tag... AI sẽ tự phân tích)"></textarea>
+        <div style="margin-top:0.6rem">
+          <button class="fetch-btn" onclick="fetchFromText()" id="fetchBtnText">✨ Phân tích & tự điền</button>
+        </div>
+      </div>
+
+      <div id="fetch-status" class="fetch-status"></div>
+    </div>
+
+    <div class="divider-or"><span>hoặc nhập tay</span></div>
+
+    <div class="form-grid">
+      <input class="fi" id="f-title" placeholder="Tên truyện *">
+      <input class="fi" id="f-author" placeholder="Tác giả">
+      <input class="fi" id="f-chapters" placeholder="Số chương" type="number">
+      <input class="fi" id="f-link" placeholder="Link đọc (tuỳ chọn)">
+    </div>
+    <textarea class="fi fi-full" id="f-desc" rows="2" placeholder="Mô tả ngắn..."></textarea>
+
+    <div class="sweet-input-row">
+      <label>🍯 Độ ngọt:</label>
+      <input type="range" id="f-sweet" min="1" max="10" value="7" oninput="document.getElementById('sweet-display').textContent=this.value">
+      <span class="sweet-val" id="sweet-display">7</span>
+      <span style="font-size:0.75rem;color:var(--text-faint)">/10</span>
+    </div>
+
+    <div class="form-tag-section">
+      <div class="form-tag-label">Kết thúc</div>
+      <div class="form-tag-group" id="fc-ket-thuc"></div>
+    </div>
+    <div class="form-tag-section">
+      <div class="form-tag-label">Độ ngọt</div>
+      <div class="form-tag-group" id="fc-do-ngot"></div>
+    </div>
+    <div class="form-tag-section">
+      <div class="form-tag-label">Thể loại / Trope</div>
+      <div class="form-tag-group" id="fc-the-loai"></div>
+    </div>
+    <div class="form-tag-section">
+      <div class="form-tag-label">Nguồn gốc</div>
+      <div class="form-tag-group" id="fc-nguon"></div>
+    </div>
+    <div class="form-tag-section">
+      <div class="form-tag-label">Tình trạng</div>
+      <div class="form-tag-group" id="fc-tinh-trang"></div>
+    </div>
+
+    <button class="submit-btn" onclick="addNovel()">🌸 Thêm vào thư viện</button>
+  </div>
+
+</div>
+
+<script>
+// ══════════════════════════════════════════
+// TAG CONFIG
+// ══════════════════════════════════════════
+const TAGS = {
+  'ket-thuc':   ['HE', 'BE', 'OE', 'Mở'],
+  'do-ngot':    ['Ngọt văn', 'Ngọt sủng', 'Ngọt đậm', 'Ngọt nhạt', 'Ngọt đau', 'Slow burn ngọt'],
+  'the-loai':   ['Đam mỹ', 'BL', 'Xuyên không', 'Trọng sinh', 'Cổ đại', 'Hiện đại', 'Huyền huyễn', 'Tiên hiệp', 'Đô thị', 'Giải trí권', 'Campus', 'ABO', 'Omegaverse', 'Công x Công', 'Thụ x Thụ', 'Hài hước', 'Chữa lành', 'Ngược', 'Không ngược'],
+  'nguon':      ['Chinese', 'Korean', 'Japanese', 'Vietnamese', 'Thai'],
+  'tinh-trang': ['Hoàn', 'Đang ra', 'Drop'],
+};
+
+// ══════════════════════════════════════════
+// DỮ LIỆU MẪU
+// ══════════════════════════════════════════
+let novels = [];
+
+let active = new Set();
+
+// ══════════════════════════════════════════
+// SUPABASE CONFIG
+// ══════════════════════════════════════════
+const SUPABASE_URL = 'https://jpeysiqxbufgizcdcjle.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_UJUd9p0TKfM2aZA1zPwVgg_yP46yj98';
+
+async function sbFetch(path, options = {}) {
+  const res = await fetch(SUPABASE_URL + '/rest/v1/' + path, {
+    ...options,
+    headers: {
+      'apikey': SUPABASE_KEY,
+      'Authorization': 'Bearer ' + SUPABASE_KEY,
+      'Content-Type': 'application/json',
+      'Prefer': options.prefer || '',
+      ...(options.headers || {}),
+    }
+  });
+  if (!res.ok) {
+    const err = await res.text();
+    throw new Error(err);
+  }
+  const text = await res.text();
+  return text ? JSON.parse(text) : null;
+}
+
+async function loadNovels() {
+  try {
+    const data = await sbFetch('novels?order=created_at.desc&select=*');
+    novels = (data || []).map(n => ({
+      id: n.id,
+      title: n.title,
+      author: n.author,
+      chapters: n.chapters,
+      desc: n.description,
+      sweet: n.sweet,
+      tags: n.tags || [],
+      link: n.link,
+    }));
+    render();
+  } catch(e) {
+    console.error('Load lỗi:', e);
+  }
+}
+
+// ══════════════════════════════════════════
+// BUILD FILTER UI
+// ══════════════════════════════════════════
+function buildFilters() {
+  for (const [cat, list] of Object.entries(TAGS)) {
+    const wrap = document.getElementById('f-' + cat);
+    list.forEach(t => {
+      const el = document.createElement('span');
+      el.className = 'ftag ' + cat;
+      el.textContent = t;
+      el.onclick = () => { el.classList.toggle('on'); active.has(t) ? active.delete(t) : active.add(t); render(); };
+      wrap.appendChild(el);
+    });
+
+    // Form checkboxes
+    const fw = document.getElementById('fc-' + cat);
+    if (!fw) return;
+    list.forEach(t => {
+      const lbl = document.createElement('label');
+      lbl.className = 'ftag-check';
+      lbl.innerHTML = `<input type="checkbox" value="${t}"> ${t}`;
+      lbl.querySelector('input').onchange = function(){ lbl.classList.toggle('on', this.checked); };
+      fw.appendChild(lbl);
+    });
+  }
+}
+
+function clearAll() {
+  active.clear();
+  document.querySelectorAll('.ftag.on').forEach(e => e.classList.remove('on'));
+  document.getElementById('searchInput').value = '';
+  render();
+}
+
+// ══════════════════════════════════════════
+// TAG COLOR HELPER
+// ══════════════════════════════════════════
+function tagColor(t) {
+  if (['HE','BE','OE','Mở'].includes(t)) return 'ctag-pink';
+  if (['Ngọt văn','Ngọt sủng','Ngọt đậm','Ngọt nhạt','Ngọt đau','Slow burn ngọt'].includes(t)) return 'ctag-gold';
+  if (['Đam mỹ','BL'].includes(t)) return 'ctag-purple';
+  if (['Chinese','Korean','Japanese','Vietnamese','Thai'].includes(t)) return 'ctag-blue';
+  if (['Hoàn','Đang ra','Drop'].includes(t)) return 'ctag-green';
+  return 'ctag-purple';
+}
+
+function endingBadge(tags) {
+  for (const e of ['HE','BE','OE','Mở']) {
+    if (tags.includes(e)) return `<span class="ending-badge ending-${e.replace('ở','o')}">${e}</span>`;
+  }
+  return '';
+}
+function statusClass(tags) {
+  if (tags.includes('Hoàn')) return 's-hoan';
+  if (tags.includes('Đang ra')) return 's-dang';
+  return 's-drop';
+}
+function statusLabel(tags) {
+  if (tags.includes('Hoàn')) return 'Hoàn';
+  if (tags.includes('Đang ra')) return 'Đang ra';
+  return 'Drop';
+}
+
+// ══════════════════════════════════════════
+// RENDER
+// ══════════════════════════════════════════
+function render() {
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  const sort = document.getElementById('sortSel').value;
+
+  let list = novels.filter(n => {
+    const ms = !q || n.title.toLowerCase().includes(q) || n.author.toLowerCase().includes(q) || n.desc.toLowerCase().includes(q);
+    const mt = [...active].every(t => n.tags.includes(t));
+    return ms && mt;
+  });
+
+  if (sort === 'sweet')    list.sort((a,b) => b.sweet - a.sweet);
+  else if (sort === 'title')    list.sort((a,b) => a.title.localeCompare(b.title,'vi'));
+  else if (sort === 'chapters') list.sort((a,b) => b.chapters - a.chapters);
+
+  // Stats
+  document.getElementById('s-total').textContent = novels.length;
+  document.getElementById('s-he').textContent = novels.filter(n=>n.tags.includes('HE')).length;
+  document.getElementById('s-be').textContent = novels.filter(n=>n.tags.includes('BE')).length;
+  document.getElementById('s-hoan').textContent = novels.filter(n=>n.tags.includes('Hoàn')).length;
+
+  document.getElementById('resultCount').innerHTML =
+    `Hiển thị <strong>${list.length}</strong> / ${novels.length} bộ truyện`;
+
+  const grid = document.getElementById('novelGrid');
+  if (!list.length) {
+    grid.innerHTML = `<div class="empty"><span class="empty-icon">🌸</span><div class="empty-text">Không tìm thấy truyện phù hợp...</div></div>`;
+    return;
+  }
+
+  grid.innerHTML = list.map(n => {
+    const displayTags = n.tags.filter(t => !['Hoàn','Đang ra','Drop'].includes(t));
+    const pct = (n.sweet / 10) * 100;
+    return `
+    <div class="novel-card">
+      <div class="card-header">
+        <div class="novel-title">${n.title}</div>
+        ${endingBadge(n.tags)}
+      </div>
+      <div class="novel-author">✒ ${n.author} · ${n.chapters} chương</div>
+      <div class="sweetness">
+        <span class="sweet-label">🍯 Độ ngọt</span>
+        <div class="sweet-bar"><div class="sweet-fill" style="width:${pct}%"></div></div>
+        <span class="sweet-score">${n.sweet}/10</span>
+      </div>
+      <div class="novel-desc">${n.desc}</div>
+      <div class="card-tags">
+        ${displayTags.map(t=>`<span class="ctag ${tagColor(t)}">${t}</span>`).join('')}
+      </div>
+      <div class="card-footer">
+        <span class="status-badge ${statusClass(n.tags)}">${statusLabel(n.tags)}</span>
+        <div style="display:flex;align-items:center;gap:0.7rem">
+          ${n.link && n.link !== '#'
+            ? `<a href="${n.link}" target="_blank" class="card-link">Đọc ngay →</a>`
+            : `<span style="opacity:0.3">—</span>`}
+          <button class="delete-btn" onclick="deleteNovel('${n.id}', event)" title="Xoá truyện này">🗑</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════════
+// ADD NOVEL
+// ══════════════════════════════════════════
+async function addNovel() {
+  const title = document.getElementById('f-title').value.trim();
+  if (!title) { alert('Nhập tên truyện đi bạn ơi! 🌸'); return; }
+  const author      = document.getElementById('f-author').value.trim() || 'Chưa rõ';
+  const chapters    = parseInt(document.getElementById('f-chapters').value) || 0;
+  const link        = document.getElementById('f-link').value.trim() || '';
+  const description = document.getElementById('f-desc').value.trim() || 'Chưa có mô tả.';
+  const sweet       = parseInt(document.getElementById('f-sweet').value) || 5;
+  const tags        = [...document.querySelectorAll('.ftag-check input:checked')].map(c=>c.value);
+
+  const submitBtn = document.querySelector('.submit-btn');
+  submitBtn.disabled = true;
+  submitBtn.textContent = '⏳ Đang lưu...';
+
+  try {
+    await sbFetch('novels', {
+      method: 'POST',
+      prefer: 'return=minimal',
+      body: JSON.stringify({ title, author, chapters, description, sweet, tags, link })
+    });
+
+    ['f-title','f-author','f-chapters','f-link'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('f-desc').value = '';
+    document.getElementById('f-sweet').value = 7;
+    document.getElementById('sweet-display').textContent = '7';
+    document.querySelectorAll('.ftag-check input').forEach(c => { c.checked = false; c.parentElement.classList.remove('on'); });
+
+    await loadNovels();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch(e) {
+    alert('Lưu thất bại bồ ơi 😢 ' + e.message);
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = '🌸 Thêm vào thư viện';
+  }
+}
+
+// ══════════════════════════════════════════
+// DELETE NOVEL
+// ══════════════════════════════════════════
+let pendingDeleteId = null;
+
+function deleteNovel(id, e) {
+  e.stopPropagation();
+  const novel = novels.find(n => String(n.id) === String(id));
+  if (!novel) return;
+  pendingDeleteId = novel.id;
+  document.getElementById('modal-title').textContent = `Xoá "${novel.title}"?`;
+  document.getElementById('deleteModal').style.display = 'flex';
+}
+
+function closeModal() {
+  document.getElementById('deleteModal').style.display = 'none';
+  pendingDeleteId = null;
+}
+
+async function confirmDelete() {
+  if (pendingDeleteId === null) return;
+  try {
+    await sbFetch('novels?id=eq.' + pendingDeleteId, {
+      method: 'DELETE',
+    });
+    closeModal();
+    await loadNovels();
+  } catch(e) {
+    alert('Xoá thất bại 😢 ' + e.message);
+  }
+}
+
+// ══════════════════════════════════════════
+// TAB SWITCH
+// ══════════════════════════════════════════
+function switchTab(tab) {
+  document.getElementById('panel-link').style.display = tab === 'link' ? '' : 'none';
+  document.getElementById('panel-text').style.display = tab === 'text' ? '' : 'none';
+  document.getElementById('tab-link').classList.toggle('active', tab === 'link');
+  document.getElementById('tab-text').classList.toggle('active', tab === 'text');
+  document.getElementById('fetch-status').className = 'fetch-status';
+  document.getElementById('fetch-status').textContent = '';
+}
+
+// ══════════════════════════════════════════
+// AI AUTO-FILL FROM PASTED TEXT
+// ══════════════════════════════════════════
+async function fetchFromText() {
+  const rawText = document.getElementById('f-pastetext').value.trim();
+  if (!rawText || rawText.length < 20) {
+    setStatus('error', '⚠️ Dán nội dung trang truyện vào trước nhé!');
+    return;
+  }
+
+  const btn = document.getElementById('fetchBtnText');
+  btn.disabled = true;
+  setStatus('loading', '🤖 AI đang phân tích nội dung...');
+
+  const allTags = Object.values(TAGS).flat();
+
+  const prompt = `Bạn là trợ lý tổng hợp truyện đam mỹ/BL tiếng Việt. Dưới đây là nội dung được copy từ một trang truyện. Hãy phân tích và trích xuất thông tin.
+
+NỘI DUNG TRANG:
+---
+${rawText.slice(0, 4000)}
+---
+
+Trả về JSON với đúng format sau (KHÔNG thêm gì khác, chỉ JSON thuần):
+{
+  "title": "tên truyện chính xác từ nội dung",
+  "author": "tên tác giả",
+  "chapters": 0,
+  "desc": "mô tả/giới thiệu truyện NGUYÊN VĂN hoặc dịch sát nhất có thể từ nội dung, 3-5 câu",
+  "sweet": 7,
+  "tags": [],
+  "new_tags": [],
+  "link": ""
+}
+
+Quy tắc:
+- "desc" phải lấy ĐÚNG từ phần giới thiệu/synopsis trong nội dung, không tự bịa
+- Ưu tiên chọn tags từ danh sách có sẵn: ${allTags.join(', ')}
+- Nếu truyện có tag quan trọng KHÔNG có trong danh sách trên, thêm vào "new_tags" (tối đa 5 tag mới, ngắn gọn tiếng Việt)
+- HE = happy ending, BE = bad ending, OE = open ending
+- sweet 1-10: 10 = cực ngọt không ngược, 1 = BE/rất ngược
+- Tình trạng: Hoàn / Đang ra / Drop
+- Nguồn: Chinese / Korean / Japanese / Vietnamese / Thai
+- Thêm trường "new_tags": [] vào JSON cho các tag mới chưa có trong danh sách`;
+
+  try {
+    const apiRes = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-6',
+        max_tokens: 1000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const apiData = await apiRes.json();
+    const text = (apiData.content || []).filter(b => b.type === 'text').map(b => b.text).join('');
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) throw new Error('parse fail');
+
+    const info = JSON.parse(jsonMatch[0]);
+
+    document.getElementById('f-title').value    = info.title    || '';
+    document.getElementById('f-author').value   = info.author   || '';
+    document.getElementById('f-chapters').value = info.chapters || '';
+    document.getElementById('f-desc').value     = info.desc     || '';
+    document.getElementById('f-link').value     = info.link     || '';
+    document.getElementById('f-sweet').value    = info.sweet    || 7;
+    document.getElementById('sweet-display').textContent = info.sweet || 7;
+
+    // Thêm tag mới vào hệ thống nếu có
+    const newTags = info.new_tags || [];
+    newTags.forEach(t => addNewTag(t));
+
+    // Tick tất cả tags (cũ + mới)
+    document.querySelectorAll('.ftag-check input').forEach(cb => {
+      cb.checked = (info.tags || []).includes(cb.value) || newTags.includes(cb.value);
+      cb.parentElement.classList.toggle('on', cb.checked);
+    });
+
+    const newTagMsg = newTags.length ? ` Thêm ${newTags.length} tag mới: ${newTags.join(', ')}` : '';
+    setStatus('success', `✅ Xong! Kiểm tra lại mô tả rồi bấm "Thêm vào thư viện" nhé~${newTagMsg}`);
+  } catch(e) {
+    setStatus('error', '❌ AI không phân tích được. Thử copy lại nhiều nội dung hơn nha!');
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+// ══════════════════════════════════════════
+// AI AUTO-FILL FROM LINK
+// ══════════════════════════════════════════
+async function fetchFromLink() {
+  const url = document.getElementById('f-autolink').value.trim();
+  if (!url || !url.startsWith('http')) {
+    setStatus('error', '⚠️ Vui lòng dán link hợp lệ bắt đầu bằng https://...');
+    return;
+  }
+
+  const btn = document.getElementById('fetchBtn');
+  btn.disabled = true;
+  setStatus('loading', '🤖 Đang đọc trang truyện...');
+
+  const allTags = Object.values(TAGS).flat();
+
+  try {
+    // Dùng AllOrigins proxy để đọc nội dung trang
+    // Thử lần lượt các proxy
+    let rawHtml = '';
+    const proxies = [
+      'https://corsproxy.io/?' + encodeURIComponent(url),
+      'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(url),
+    ];
+    for (const proxyUrl of proxies) {
+      try {
+        const proxyRes = await fetch(proxyUrl);
+        if (proxyRes.ok) {
+          rawHtml = await proxyRes.text();
+          if (rawHtml.length > 100) break;
+        }
+      } catch(e) { continue; }
+    }
+
+    // Lấy text từ HTML, bỏ tags
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(rawHtml, 'text/html');
+    // Xóa script, style
+    doc.querySelectorAll('script, style, nav, footer, header').forEach(e => e.remove());
+    const pageText = doc.body?.innerText || doc.body?.textContent || '';
+    const cleanText = pageText.replace(/\s+/g, ' ').trim().slice(0, 5000);
+
+    if (!cleanText || cleanText.length < 50) throw new Error('Không đọc được nội dung');
+
+    setStatus('loading', '🤖 AI đang phân tích nội dung...');
+
+    // Gọi Anthropic API (chạy trong Claude artifact)
+    const prompt = `Bạn là trợ lý tổng hợp truyện đam mỹ/BL tiếng Việt. Dưới đây là nội dung trang truyện. Hãy trích xuất thông tin.
+
+NỘI DUNG:
+---
+${cleanText}
+---
+URL gốc: ${url}
+
+Trả về JSON thuần (không markdown, không backtick):
+{
+  "title": "tên truyện chính xác",
+  "author": "tên tác giả",
+  "chapters": 0,
+  "desc": "mô tả/tóm tắt NGUYÊN VĂN từ trang, 3-5 câu",
+  "sweet": 7,
+  "tags": [],
+  "new_tags": [],
+  "link": "${url}"
+}
+
+Quy tắc:
+- desc phải lấy ĐÚNG từ phần tóm tắt/giới thiệu, không tự bịa
+- Ưu tiên tags từ danh sách: ${allTags.join(', ')}
+- new_tags: tối đa 5 tag mới quan trọng chưa có trong danh sách
+- HE/BE/OE = kết thúc, sweet 1-10, Hoàn/Đang ra/Drop = tình trạng
+- Nguồn: Chinese/Korean/Japanese/Vietnamese/Thai`;
+
+    const apiRes = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-6',
+        max_tokens: 1000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const apiData = await apiRes.json();
+    const text = (apiData.content || []).filter(b => b.type === 'text').map(b => b.text).join('');
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) throw new Error('parse fail');
+    const info = JSON.parse(jsonMatch[0]);
+
+    document.getElementById('f-title').value    = info.title    || '';
+    document.getElementById('f-author').value   = info.author   || '';
+    document.getElementById('f-chapters').value = info.chapters || '';
+    document.getElementById('f-desc').value     = info.desc     || '';
+    document.getElementById('f-link').value     = info.link     || url;
+    document.getElementById('f-sweet').value    = info.sweet    || 7;
+    document.getElementById('sweet-display').textContent = info.sweet || 7;
+
+    const newTags = info.new_tags || [];
+    newTags.forEach(t => addNewTag(t));
+    document.querySelectorAll('.ftag-check input').forEach(cb => {
+      cb.checked = (info.tags || []).includes(cb.value) || newTags.includes(cb.value);
+      cb.parentElement.classList.toggle('on', cb.checked);
+    });
+
+    const newTagMsg = newTags.length ? ` Thêm ${newTags.length} tag mới: ${newTags.join(', ')}` : '';
+    setStatus('success', `✅ Đã điền xong! Kiểm tra lại rồi bấm "Thêm vào thư viện" nhé~${newTagMsg}`);
+  } catch(e) {
+    setStatus('error', '❌ Không đọc được trang này. Bồ thử tab "Dán nội dung trang" nhé!');
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+// ══════════════════════════════════════════
+// ADD NEW TAG DYNAMICALLY
+// ══════════════════════════════════════════
+function addNewTag(tag) {
+  tag = tag.trim();
+  if (!tag) return;
+  const allExisting = Object.values(TAGS).flat();
+  if (allExisting.includes(tag)) return; // đã có rồi
+
+  // Thêm vào data
+  TAGS['the-loai'].push(tag);
+
+  // Thêm vào bộ lọc filter UI
+  const filterWrap = document.getElementById('f-the-loai');
+  const el = document.createElement('span');
+  el.className = 'ftag the-loai new-tag';
+  el.textContent = '✨ ' + tag;
+  el.onclick = () => { el.classList.toggle('on'); active.has(tag) ? active.delete(tag) : active.add(tag); render(); };
+  filterWrap.appendChild(el);
+
+  // Thêm vào form checkbox
+  const formWrap = document.getElementById('fc-the-loai');
+  const lbl = document.createElement('label');
+  lbl.className = 'ftag-check new-tag';
+  lbl.innerHTML = `<input type="checkbox" value="${tag}"> ✨ ${tag}`;
+  lbl.querySelector('input').onchange = function(){ lbl.classList.toggle('on', this.checked); };
+  formWrap.appendChild(lbl);
+}
+
+function setStatus(type, msg) {
+  const el = document.getElementById('fetch-status');
+  el.className = 'fetch-status ' + type;
+  el.textContent = msg;
+}
+
+// ══════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════
+document.getElementById('searchInput').addEventListener('input', render);
+buildFilters();
+loadNovels();
+</script>
+<!-- CONFIRM MODAL -->
+<div class="modal-overlay" id="deleteModal" style="display:none" onclick="closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-icon">🗑️</div>
+    <div class="modal-title" id="modal-title">Xoá truyện này?</div>
+    <div class="modal-sub" id="modal-sub">Truyện sẽ biến mất khỏi thư viện. Không hoàn tác được nhé!</div>
+    <div class="modal-actions">
+      <button class="modal-cancel" onclick="closeModal()">Thôi, giữ lại</button>
+      <button class="modal-confirm" onclick="confirmDelete()">Xoá luôn</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
