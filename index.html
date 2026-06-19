@@ -1,0 +1,2188 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌸 Gia tộc của Caeneus</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F4FAFA;
+  --surface: #FFFFFF;
+  --surface2: #EAF6F4;
+  --border: #D7EFE9;
+  --purple: #1D9E75;
+  --purple-light: #0F6E56;
+  --pink: #D4537E;
+  --pink-light: #A14668;
+  --gold: #BA7517;
+  --blue: #378ADD;
+  --green: #1D9E75;
+  --text: #1B3A3A;
+  --text-dim: #3D5C5C;
+  --text-faint: rgba(27,58,58,0.45);
+  --he: #D4537E;
+  --be: #378ADD;
+  --sweet: #BA7517;
+  --shadow: rgba(27,58,58,0.12);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito', sans-serif;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse at 15% 10%, rgba(55,138,221,0.08) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 90%, rgba(29,158,117,0.07) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 50%, rgba(212,83,126,0.04) 0%, transparent 60%);
+}
+
+/* ── HEADER ── */
+header {
+  padding: 3rem 2rem 2.5rem;
+  text-align: center;
+  position: relative;
+}
+header::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--purple), var(--pink), transparent);
+  margin-top: 2rem;
+  opacity: 0.4;
+}
+.site-emoji { font-size: 2.5rem; display: block; margin-bottom: 0.5rem; animation: float 3s ease-in-out infinite; }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+
+.site-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--purple-light), var(--pink-light), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+.site-sub {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+}
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+.stat { text-align: center; }
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--purple-light), var(--pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.stat-label { font-size: 0.68rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.1em; }
+
+/* ── CONTAINER ── */
+.container { max-width: 1150px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+/* ── SEARCH ── */
+.search-wrap { position: relative; margin-bottom: 1.5rem; }
+.search-icon { position: absolute; left: 1.1rem; top: 50%; transform: translateY(-50%); font-size: 1rem; opacity: 0.4; }
+#searchInput {
+  width: 100%;
+  padding: 0.9rem 1rem 0.9rem 3rem;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  color: var(--text);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+#searchInput:focus {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(29,158,117,0.15);
+}
+#searchInput::placeholder { color: var(--text-faint); }
+
+/* ── FILTER BOX ── */
+.filter-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.8rem;
+}
+.filter-row { margin-bottom: 1rem; }
+.filter-row:last-child { margin-bottom: 0; }
+.filter-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-faint);
+  margin-bottom: 0.6rem;
+}
+.tag-group { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+
+.ftag {
+  padding: 0.3rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: all 0.15s;
+  user-select: none;
+}
+.ftag:hover { transform: translateY(-1px); }
+
+.ftag.ket-thuc  { background: rgba(212,83,126,0.1); color: var(--pink); border-color: rgba(212,83,126,0.2); }
+.ftag.ket-thuc.on  { background: var(--pink); color: #FBEAF0; border-color: var(--pink); }
+
+.ftag.do-ngot  { background: rgba(186,117,23,0.1); color: var(--gold); border-color: rgba(186,117,23,0.2); }
+.ftag.do-ngot.on  { background: var(--gold); color: #FAEEDA; border-color: var(--gold); }
+
+.ftag.the-loai { background: rgba(29,158,117,0.1); color: var(--purple-light); border-color: rgba(29,158,117,0.22); }
+.ftag.the-loai.on { background: var(--purple); color: white; border-color: var(--purple); }
+
+.ftag.nguon    { background: rgba(55,138,221,0.1); color: var(--blue); border-color: rgba(55,138,221,0.2); }
+.ftag.nguon.on    { background: var(--blue); color: #E6F1FB; border-color: var(--blue); }
+
+.ftag.tinh-trang { background: rgba(29,158,117,0.1); color: var(--green); border-color: rgba(29,158,117,0.2); }
+.ftag.tinh-trang.on { background: var(--green); color: #EAF3DE; border-color: var(--green); }
+
+.ftag.hinh-thuc { background: rgba(106,90,205,0.1); color: #6A5ACD; border-color: rgba(106,90,205,0.2); }
+.ftag.hinh-thuc.on { background: #6A5ACD; color: #F0EDFB; border-color: #6A5ACD; }
+
+.filter-actions { display: flex; gap: 0.6rem; margin-top: 1rem; flex-wrap: wrap; }
+.clear-btn {
+  padding: 0.3rem 0.9rem;
+  font-size: 0.78rem;
+  font-family: 'Nunito', sans-serif;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.clear-btn:hover { border-color: var(--purple); color: var(--purple-light); }
+
+/* ── TOOLBAR ── */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+.result-count { font-size: 0.83rem; color: var(--text-dim); }
+.result-count strong { color: var(--purple-light); }
+.sort-select {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  padding: 0.35rem 0.8rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  cursor: pointer;
+  outline: none;
+}
+
+/* ── NOVEL GRID ── */
+.novel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1.1rem;
+}
+@media(max-width:680px){ .novel-grid { grid-template-columns: 1fr; } }
+
+.novel-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.3rem;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  animation: popIn 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+@keyframes popIn {
+  from { opacity:0; transform:translateY(10px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.novel-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--purple), var(--pink));
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.novel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(27,58,58,0.10), 0 0 0 1px rgba(29,158,117,0.15);
+  border-color: rgba(29,158,117,0.25);
+}
+.novel-card:hover::before { opacity: 1; }
+
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.7rem; margin-bottom: 0.4rem; }
+.novel-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text);
+}
+.ending-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 50px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ending-HE  { background: #f1e6e6; color: #9d6666; border: none; }
+.ending-BE  { background: #e6eef1; color: #5e7d8c; border: none; }
+.ending-OE  { background: #f1ece6; color: #9d8266; border: none; }
+.ending-SE  { background: #e6f1ea; color: #669d80; border: none; }
+
+.novel-author { font-size: 0.78rem; color: var(--text-faint); margin-bottom: 0.75rem; font-style: italic; }
+
+.sweetness {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+.sweet-label { font-size: 0.7rem; color: var(--text-faint); }
+.sweet-bar {
+  flex: 1;
+  height: 4px;
+  background: var(--surface2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.sweet-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--purple), var(--pink), var(--gold));
+  transition: width 0.4s ease;
+}
+.sweet-score { font-size: 0.7rem; color: var(--gold); font-weight: 700; }
+
+.novel-desc {
+  font-size: 0.83rem;
+  color: #4a5c58;
+  line-height: 1.65;
+  margin-bottom: 0.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.9rem; }
+.ctag {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+}
+.ctag-purple { background: rgba(29,158,117,0.10); color: var(--purple-light); }
+.ctag-pink   { background: rgba(212,83,126,0.1); color: var(--pink); }
+.ctag-gold   { background: rgba(186,117,23,0.1); color: var(--gold); }
+.ctag-blue   { background: rgba(55,138,221,0.1); color: var(--blue); }
+.ctag-green  { background: rgba(29,158,117,0.1); color: var(--green); }
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--text-faint);
+}
+.status-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+.s-hoan  { background: #e6f1ea; color: #4f8a6c; }
+.s-dang  { background: #f1ece6; color: #9d8266; }
+.s-drop  { background: #ececec; color: #767676; }
+.format-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+.format-chu   { background: #ece9f7; color: #6A5ACD; }
+.format-tranh { background: #ece9f7; color: #6A5ACD; }
+.card-link { color: var(--purple-light); text-decoration: none; font-weight: 600; font-size: 0.75rem; }
+.card-link:hover { color: var(--pink-light); }
+
+/* ── EMPTY ── */
+.empty {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 5rem 2rem;
+  color: var(--text-faint);
+}
+.empty-icon { font-size: 3.5rem; margin-bottom: 1rem; display: block; }
+.empty-text { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; }
+
+/* ── ADD FORM ── */
+.add-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.8rem;
+  margin-top: 2.5rem;
+}
+.add-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--purple-light);
+  margin-bottom: 1.2rem;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+@media(max-width:580px){ .form-grid { grid-template-columns: 1fr; } }
+.fi {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.88rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.fi:focus { border-color: var(--purple); }
+.fi::placeholder { color: var(--text-faint); }
+.fi-full { width: 100%; margin-bottom: 0.8rem; }
+
+.sweet-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+.sweet-input-row label { font-size: 0.82rem; color: var(--text-dim); white-space: nowrap; }
+.sweet-input-row input[type=range] {
+  flex: 1;
+  accent-color: var(--purple);
+}
+.sweet-val { font-size: 0.82rem; color: var(--gold); font-weight: 700; min-width: 1.5rem; text-align: center; }
+
+.form-tag-section { margin-bottom: 1rem; }
+.form-tag-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-faint); margin-bottom: 0.5rem; }
+.form-tag-group { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.ftag-check {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.28rem 0.7rem;
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  transition: all 0.15s;
+  user-select: none;
+}
+.ftag-check input { display: none; }
+.ftag-check.on { background: var(--purple); color: white; border-color: var(--purple); }
+
+/* ── AI FETCH ── */
+.ai-fetch-box {
+  background: linear-gradient(135deg, rgba(29,158,117,0.08), rgba(212,83,126,0.06));
+  border: 1px solid rgba(29,158,117,0.22);
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+}
+.ai-fetch-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--purple-light);
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.03em;
+}
+.ai-fetch-row { display: flex; gap: 0.6rem; }
+.ai-fetch-row .fi { flex: 1; }
+.fetch-btn {
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+  color: white;
+  border: none;
+  padding: 0.65rem 1.2rem;
+  border-radius: 8px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.fetch-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+.fetch-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.fetch-status { margin-top: 0.6rem; font-size: 0.8rem; min-height: 1.2rem; }
+.fetch-status.loading { color: var(--purple-light); }
+.fetch-status.success { color: var(--green); }
+.fetch-status.error   { color: var(--pink); }
+.divider-or {
+  display: flex; align-items: center; gap: 0.8rem;
+  margin: 1rem 0; color: var(--text-faint); font-size: 0.75rem;
+}
+.divider-or::before, .divider-or::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
+
+.fetch-tabs { display:flex; gap:0.4rem; margin-bottom:0.8rem; }
+.fetch-tab {
+  padding:0.3rem 0.9rem;
+  border-radius:50px;
+  font-size:0.78rem;
+  font-weight:700;
+  font-family:'Nunito',sans-serif;
+  cursor:pointer;
+  border:1.5px solid var(--border);
+  background:transparent;
+  color:var(--text-dim);
+  transition:all 0.15s;
+}
+.fetch-tab.active { background:var(--purple); color:white; border-color:var(--purple); }
+.fetch-tab:hover:not(.active) { border-color:var(--purple); color:var(--purple-light); }
+
+.delete-btn {
+  background: transparent;
+  border: 1px solid rgba(212,83,126,0.18);
+  border-radius: 6px;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: all 0.15s;
+}
+.delete-btn:hover { opacity: 1; background: rgba(212,83,126,0.15); border-color: var(--pink); }
+
+.edit-btn {
+  background: transparent;
+  border: 1px solid rgba(29,158,117,0.18);
+  border-radius: 6px;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: all 0.15s;
+}
+.edit-btn:hover { opacity: 1; background: rgba(29,158,117,0.15); border-color: var(--purple); }
+
+.add-section.editing {
+  border-color: rgba(29,158,117,0.35);
+  box-shadow: 0 0 0 3px rgba(29,158,117,0.08);
+}
+.edit-mode-banner {
+  display: none;
+  background: linear-gradient(135deg, rgba(29,158,117,0.10), rgba(240,122,176,0.08));
+  border: 1px solid rgba(29,158,117,0.25);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.82rem;
+  color: var(--purple-light);
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.add-section.editing .edit-mode-banner { display: flex; }
+.cancel-edit-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  font-family: 'Nunito', sans-serif;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.cancel-edit-btn:hover { border-color: var(--purple); color: var(--purple-light); }
+
+.ftag.new-tag { border-style: dashed; }
+.ftag-check.new-tag { border-style: dashed; }
+
+/* ── CUSTOM TAG INPUT ── */
+.custom-tag-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border);
+}
+.custom-tag-row .fi {
+  flex: 1;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.78rem;
+  border-radius: 50px;
+}
+.add-tag-btn {
+  background: transparent;
+  border: 1.5px solid var(--purple);
+  color: var(--purple-light);
+  padding: 0.28rem 0.8rem;
+  border-radius: 50px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+.add-tag-btn:hover { background: var(--purple); color: white; }
+
+.submit-btn {
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.submit-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+/* ── CONFIRM MODAL ── */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(27,58,58,0.35);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  display: flex; align-items: center; justify-content: center;
+  animation: fadeIn 0.15s ease;
+}
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+.modal-box {
+  background: var(--surface);
+  border: 1px solid rgba(212,83,126,0.25);
+  border-radius: 16px;
+  padding: 1.8rem;
+  max-width: 360px;
+  width: 90%;
+  text-align: center;
+  animation: popIn 0.2s ease;
+}
+.modal-icon { font-size: 2.2rem; margin-bottom: 0.8rem; }
+.modal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--text);
+}
+.modal-sub { font-size: 0.82rem; color: var(--text-dim); margin-bottom: 1.4rem; line-height: 1.5; }
+.modal-actions { display: flex; gap: 0.7rem; justify-content: center; }
+.modal-cancel {
+  padding: 0.55rem 1.4rem;
+  border-radius: 50px;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.modal-cancel:hover { border-color: var(--purple); color: var(--purple-light); }
+.modal-confirm {
+  padding: 0.55rem 1.4rem;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(135deg, #e05585, #c03060);
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.modal-confirm:hover { opacity: 0.88; transform: translateY(-1px); }
+
+
+/* ── DETAIL MODAL ── */
+.detail-overlay {
+  position: fixed; inset: 0;
+  background: rgba(10,8,20,0.75);
+  backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 999; padding: 1.5rem;
+}
+.detail-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 2rem;
+  max-width: 560px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 16px 48px rgba(27,58,58,0.14);
+  animation: popIn 0.2s ease;
+}
+@keyframes popIn {
+  from { opacity:0; transform: scale(0.95) translateY(10px); }
+  to   { opacity:1; transform: scale(1) translateY(0); }
+}
+.detail-close {
+  position: absolute; top: 1rem; right: 1rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 2rem; height: 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--text-dim);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+}
+.detail-close:hover { border-color: var(--pink); color: var(--pink); }
+.detail-badge-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+.detail-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+  padding-right: 2rem;
+}
+.detail-author {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 1.2rem;
+}
+.detail-desc {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  line-height: 1.75;
+  white-space: pre-wrap;
+  margin-bottom: 1.4rem;
+  padding: 1rem;
+  background: rgba(181,123,238,0.05);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.detail-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.4rem; }
+.detail-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.detail-link {
+  display: inline-block;
+  padding: 0.5rem 1.4rem;
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+  color: white;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+.detail-link:hover { opacity: 0.85; }
+.detail-chapters { font-size: 0.8rem; color: var(--text-faint); }
+
+
+/* ── AUTH ── */
+.auth-corner {
+  position: fixed;
+  top: 1rem; right: 1rem;
+  z-index: 500;
+  display: flex;
+  gap: 0.5rem;
+}
+.feedback-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 0.4rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  color: var(--text-dim);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.15s;
+  box-shadow: 0 2px 8px rgba(27,58,58,0.10);
+}
+.feedback-btn:hover { border-color: var(--purple); color: var(--purple-light); }
+.feedback-box textarea.fi {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  min-height: 90px;
+  font-family: 'Nunito', sans-serif;
+  margin-bottom: 0.7rem;
+}
+.feedback-success {
+  text-align: center;
+  padding: 1rem 0;
+  color: var(--purple-light);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.login-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 0.4rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  color: var(--text-dim);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.15s;
+  box-shadow: 0 2px 8px rgba(27,58,58,0.10);
+}
+.login-btn:hover { border-color: var(--purple); color: var(--purple-light); }
+.login-btn.logged-in { border-color: rgba(29,158,117,0.3); color: var(--purple-light); }
+
+.auth-overlay {
+  position: fixed; inset: 0;
+  background: rgba(10,8,20,0.75);
+  backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000; padding: 1.5rem;
+}
+.auth-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.8rem;
+  max-width: 340px;
+  width: 100%;
+  box-shadow: 0 16px 48px rgba(27,58,58,0.14);
+}
+.auth-title { font-size: 1.05rem; font-weight: 800; margin-bottom: 1.2rem; color: var(--text); }
+.auth-box .fi { width: 100%; margin-bottom: 0.7rem; box-sizing: border-box; }
+.auth-error { color: var(--pink); font-size: 0.78rem; margin-bottom: 0.6rem; min-height: 1rem; }
+.auth-actions { display: flex; gap: 0.6rem; margin-top: 0.4rem; }
+.auth-submit {
+  flex: 1;
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.auth-submit:hover { opacity: 0.88; }
+.auth-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+.auth-cancel {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  color: var(--text-dim);
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+}
+.auth-cancel:hover { border-color: var(--purple); color: var(--purple-light); }
+
+.owner-only { display: none !important; }
+.is-owner .owner-only { display: inline-flex !important; }
+
+
+.info-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 0.4rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  color: var(--text-dim);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.15s;
+  box-shadow: 0 2px 8px rgba(27,58,58,0.10);
+}
+.info-btn:hover { border-color: var(--purple); color: var(--purple-light); }
+
+.welcome-box {
+  max-width: 480px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.welcome-title { font-size: 1.3rem; font-weight: 800; margin-bottom: 1.2rem; color: var(--text); }
+.welcome-section { margin-bottom: 1.3rem; }
+.welcome-section-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--purple-light);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.welcome-section p, .welcome-section li {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+.welcome-section ul { padding-left: 1.2rem; margin-top: 0.3rem; }
+.welcome-section li { margin-bottom: 0.3rem; }
+.welcome-close-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  margin-top: 0.5rem;
+}
+.welcome-close-btn:hover { opacity: 0.88; }
+
+
+.changelog-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 0.4rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  color: var(--text-dim);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.15s;
+  box-shadow: 0 2px 8px rgba(27,58,58,0.10);
+}
+.changelog-btn:hover { border-color: var(--purple); color: var(--purple-light); }
+
+.changelog-box {
+  max-width: 480px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.changelog-title { font-size: 1.2rem; font-weight: 800; margin-bottom: 1.2rem; color: var(--text); }
+.changelog-entry { margin-bottom: 1.1rem; padding-bottom: 1.1rem; border-bottom: 1px solid var(--border); }
+.changelog-entry:last-child { border-bottom: none; margin-bottom: 0.5rem; padding-bottom: 0; }
+.changelog-date { font-size: 0.75rem; font-weight: 700; color: var(--purple-light); margin-bottom: 0.5rem; }
+.changelog-entry ul { padding-left: 1.2rem; }
+.changelog-entry li { font-size: 0.85rem; color: var(--text-dim); line-height: 1.7; margin-bottom: 0.25rem; }
+.changelog-close-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  margin-top: 0.6rem;
+}
+.changelog-close-btn:hover { opacity: 0.88; }
+
+
+/* ── MAIN MENU ── */
+.main-menu-wrap {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+.main-menu-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 0.55rem 1.3rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  color: var(--text-dim);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.15s;
+  box-shadow: 0 2px 8px rgba(27,58,58,0.08);
+}
+.main-menu-btn:hover { border-color: var(--purple); color: var(--purple-light); }
+.main-menu-btn.active { color: var(--purple-light); border-color: var(--purple); background: rgba(29,158,117,0.08); }
+
+.filter-box, .add-section { display: none; }
+.filter-box.panel-open, .add-section.panel-open {
+  display: block;
+  position: fixed;
+  inset: 0;
+  background: rgba(27,58,58,0.35);
+  backdrop-filter: blur(4px);
+  z-index: 800;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+.filter-box.panel-open::before, .add-section.panel-open::before {
+  content: '';
+}
+.panel-inner {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  box-shadow: 0 20px 60px rgba(27,58,58,0.18);
+  position: relative;
+}
+.panel-close-btn {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 2rem; height: 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--text-dim);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+  z-index: 10;
+}
+.panel-close-btn:hover { border-color: var(--pink); color: var(--pink); }
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <span class="site-emoji">🌸</span>
+  <div class="site-title">Gia tộc của Caeneus</div>
+  <div class="site-sub">Tổng hợp các bộ truyện hoàn</div>
+  <div class="stats-row">
+    <div class="stat"><div class="stat-num" id="s-total">0</div><div class="stat-label">Bộ truyện</div></div>
+    <div class="stat"><div class="stat-num" id="s-he">0</div><div class="stat-label">HE 🩷</div></div>
+    <div class="stat"><div class="stat-num" id="s-be">0</div><div class="stat-label">BE 💙</div></div>
+    <div class="stat"><div class="stat-num" id="s-se">0</div><div class="stat-label">SE 🩶</div></div>
+    <div class="stat"><div class="stat-num" id="s-oe">0</div><div class="stat-label">OE 🤍</div></div>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- MAIN MENU -->
+  <div class="main-menu-wrap">
+    <button class="main-menu-btn" id="btn-filter" onclick="togglePanel('filter')">🔍 Lọc truyện</button>
+    <button class="main-menu-btn" id="btn-add" onclick="togglePanel('add')">🌸 Thêm truyện</button>
+  </div>
+
+  <!-- SEARCH -->
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="Tìm tên truyện, tác giả, mô tả...">
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filter-box" id="filterBox" onclick="if(event.target===this) togglePanel('filter')">
+   <div class="panel-inner">
+    <button class="panel-close-btn" onclick="togglePanel('filter')">✕</button>
+    <div class="filter-row">
+      <div class="filter-label">Hình thức</div>
+      <div class="tag-group" id="f-hinh-thuc"></div>
+    </div>
+    <div class="filter-row">
+      <div class="filter-label">Kết thúc</div>
+      <div class="tag-group" id="f-ket-thuc"></div>
+    </div>
+    <div class="filter-row">
+      <div class="filter-label">Độ ngọt</div>
+      <div class="tag-group" id="f-do-ngot"></div>
+    </div>
+    <div class="filter-row">
+      <div class="filter-label">Thể loại / Trope</div>
+      <div class="tag-group" id="f-the-loai"></div>
+    </div>
+    <div class="filter-row">
+      <div class="filter-label">Nguồn gốc</div>
+      <div class="tag-group" id="f-nguon"></div>
+    </div>
+    <div class="filter-row">
+      <div class="filter-label">Tình trạng</div>
+      <div class="tag-group" id="f-tinh-trang"></div>
+    </div>
+    <div class="filter-actions">
+      <button class="clear-btn" onclick="clearAll()">✕ Xoá bộ lọc</button>
+    </div>
+   </div>
+  </div>
+
+  <!-- TOOLBAR -->
+  <div class="toolbar">
+    <div class="result-count" id="resultCount"></div>
+    <select class="sort-select" id="sortSel" onchange="render()">
+      <option value="default">Mới thêm</option>
+      <option value="title">Tên A-Z</option>
+      <option value="chapters">Nhiều chương nhất</option>
+    </select>
+  </div>
+
+  <!-- GRID -->
+  <div class="novel-grid" id="novelGrid"></div>
+
+  <!-- ADD FORM -->
+  <div class="add-section" id="addSection" onclick="if(event.target===this) togglePanel('add')">
+   <div class="panel-inner">
+    <button class="panel-close-btn" onclick="togglePanel('add')">✕</button>
+    <div class="add-title">✦ Thêm truyện vào thư viện</div>
+    <div class="edit-mode-banner">
+      <span>✏️ Đang chỉnh sửa truyện — kiểm tra lại rồi bấm Cập nhật nhé!</span>
+      <button class="cancel-edit-btn" onclick="cancelEdit()">✕ Huỷ</button>
+    </div>
+
+    <!-- AI LINK FETCH -->
+    <div class="ai-fetch-box">
+      <div class="ai-fetch-label">🤖 AI tự điền thông tin</div>
+
+      <!-- TAB SWITCH -->
+      <div class="fetch-tabs">
+        <button class="fetch-tab active" id="tab-link" onclick="switchTab('link')">🔗 Dán link</button>
+        <button class="fetch-tab" id="tab-text" onclick="switchTab('text')">📋 Dán nội dung trang</button>
+      </div>
+
+      <!-- TAB: LINK -->
+      <div id="panel-link">
+        <div class="ai-fetch-row">
+          <input class="fi" id="f-autolink" placeholder="https://wattpad.com/... hoặc bất kỳ trang truyện nào">
+          <button class="fetch-btn" onclick="fetchFromLink()" id="fetchBtn">✨ Tự điền</button>
+        </div>
+      </div>
+
+      <!-- TAB: PASTE TEXT -->
+      <div id="panel-text" style="display:none">
+        <div style="font-size:0.75rem;color:var(--text-faint);margin-bottom:0.5rem">
+          Vào trang truyện → bôi đen toàn bộ nội dung (Ctrl+A) → Copy (Ctrl+C) → dán vào đây
+        </div>
+        <textarea class="fi" id="f-pastetext" rows="5" placeholder="Dán nội dung trang Wattpad, AO3, hay bất kỳ trang nào vào đây...&#10;&#10;(Tên truyện, tác giả, mô tả, tag... AI sẽ tự phân tích)"></textarea>
+        <div style="margin-top:0.6rem">
+          <button class="fetch-btn" onclick="fetchFromText()" id="fetchBtnText">✨ Phân tích & tự điền</button>
+        </div>
+      </div>
+
+      <div id="fetch-status" class="fetch-status"></div>
+    </div>
+
+    <div class="divider-or"><span>hoặc nhập tay</span></div>
+
+    <div class="form-grid">
+      <input class="fi" id="f-title" placeholder="Tên truyện *">
+      <input class="fi" id="f-author" placeholder="Tác giả">
+      <input class="fi" id="f-chapters" placeholder="Số chương" type="number">
+      <input class="fi" id="f-link" placeholder="Link đọc (tuỳ chọn)">
+    </div>
+    <textarea class="fi fi-full" id="f-desc" rows="2" placeholder="Mô tả ngắn..."></textarea>
+
+    <div class="custom-tag-row">
+      <input class="fi" id="custom-tag-input" placeholder="✨ Thêm tag mới..." onkeydown="if(event.key==='Enter'){event.preventDefault();addCustomTag()}">
+      <button class="add-tag-btn" onclick="addCustomTag()">+ Thêm tag</button>
+    </div>
+
+    <div class="form-tag-section">
+      <div class="form-tag-label">Hình thức</div>
+      <div class="form-tag-group" id="fc-hinh-thuc"></div>
+    </div>
+    <div class="form-tag-section">
+      <div class="form-tag-label">Kết thúc</div>
+      <div class="form-tag-group" id="fc-ket-thuc"></div>
+    </div>
+    <div class="form-tag-section">
+      <div class="form-tag-label">Độ ngọt</div>
+      <div class="form-tag-group" id="fc-do-ngot"></div>
+    </div>
+    <div class="form-tag-section">
+      <div class="form-tag-label">Thể loại / Trope</div>
+      <div class="form-tag-group" id="fc-the-loai"></div>
+    </div>
+    <div class="form-tag-section">
+      <div class="form-tag-label">Nguồn gốc</div>
+      <div class="form-tag-group" id="fc-nguon"></div>
+    </div>
+    <div class="form-tag-section">
+      <div class="form-tag-label">Tình trạng</div>
+      <div class="form-tag-group" id="fc-tinh-trang"></div>
+    </div>
+
+    <button class="submit-btn" id="submitBtn" onclick="addNovel()">🌸 Thêm truyện ở đây nhé</button>
+   </div>
+  </div>
+
+</div>
+
+<script>
+// ══════════════════════════════════════════
+// TAG CONFIG
+// ══════════════════════════════════════════
+const TAGS = {
+  'ket-thuc':   ['HE', 'BE', 'SE', 'OE'],
+  'do-ngot':    ['Ngọt văn', 'Ngọt sủng', 'Ngọt đậm', 'Ngọt nhạt', 'Ngọt đau', 'Slow burn ngọt'],
+  'the-loai':   ['Đam mỹ', 'BL', 'Xuyên không', 'Trọng sinh', 'Cổ đại', 'Hiện đại', 'Huyền huyễn', 'Tiên hiệp', 'Đô thị', 'Giải trí', 'Campus', 'ABO', 'Omegaverse', 'Hài hước', 'Chữa lành', 'Ngược', 'Không ngược'],
+  'nguon':      ['Chinese', 'Korean', 'Japanese', 'Vietnamese', 'Thai'],
+  'tinh-trang': ['Hoàn', 'Đang ra', 'Drop'],
+  'hinh-thuc':  ['Truyện chữ', 'Truyện tranh'],
+};
+
+// ══════════════════════════════════════════
+// DỮ LIỆU MẪU
+// ══════════════════════════════════════════
+let novels = [];
+
+let active = new Set();
+
+// ══════════════════════════════════════════
+// SUPABASE CONFIG
+// ══════════════════════════════════════════
+const SUPABASE_URL = 'https://jpeysiqxbufgizcdcjle.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_UJUd9p0TKfM2aZA1zPwVgg_yP46yj98';
+
+// ══════════════════════════════════════════
+// AUTH
+// ══════════════════════════════════════════
+let session = JSON.parse(localStorage.getItem('truyen_session') || 'null');
+
+function isLoggedIn() { return !!(session && session.access_token); }
+
+function updateAuthUI() {
+  const btn = document.getElementById('loginBtn');
+  if (!btn) return;
+  if (isLoggedIn()) {
+    document.body.classList.add('is-owner');
+    btn.textContent = '👑 Đã đăng nhập';
+    btn.classList.add('logged-in');
+    btn.onclick = doLogout;
+  } else {
+    document.body.classList.remove('is-owner');
+    btn.textContent = '🔒 Đăng nhập';
+    btn.classList.remove('logged-in');
+    btn.onclick = openAuthModal;
+  }
+}
+
+function openAuthModal() {
+  document.getElementById('authModal').style.display = 'flex';
+  document.getElementById('auth-error').textContent = '';
+}
+function closeAuthModal() {
+  document.getElementById('authModal').style.display = 'none';
+  document.getElementById('auth-email').value = '';
+  document.getElementById('auth-password').value = '';
+}
+
+async function doLogin() {
+  const email = document.getElementById('auth-email').value.trim();
+  const password = document.getElementById('auth-password').value;
+  const errEl = document.getElementById('auth-error');
+  const btn = document.getElementById('auth-submit-btn');
+  if (!email || !password) { errEl.textContent = 'Nhập đủ email và mật khẩu nhé!'; return; }
+
+  btn.disabled = true; btn.textContent = 'Đang đăng nhập...';
+  try {
+    const res = await fetch(SUPABASE_URL + '/auth/v1/token?grant_type=password', {
+      method: 'POST',
+      headers: { 'apikey': SUPABASE_KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error_description || data.msg || 'Sai email hoặc mật khẩu');
+
+    session = { access_token: data.access_token, refresh_token: data.refresh_token };
+    localStorage.setItem('truyen_session', JSON.stringify(session));
+    updateAuthUI();
+    closeAuthModal();
+    render();
+  } catch(e) {
+    errEl.textContent = e.message;
+  } finally {
+    btn.disabled = false; btn.textContent = 'Đăng nhập';
+  }
+}
+
+function doLogout() {
+  session = null;
+  localStorage.removeItem('truyen_session');
+  updateAuthUI();
+  render();
+}
+
+// ══════════════════════════════════════════
+// WELCOME / GIỚI THIỆU
+// ══════════════════════════════════════════
+function openWelcomeModal() {
+  document.getElementById('welcomeModal').style.display = 'flex';
+}
+
+// ══════════════════════════════════════════
+// CHANGELOG / NHẬT KÝ CẬP NHẬT
+// Thêm bản mới lên ĐẦU danh sách (unshift hoặc thêm vào đầu array)
+// ══════════════════════════════════════════
+const CHANGELOG = [
+  {
+    date: '17/06/2026',
+    items: [
+      'Tăng độ rõ của chữ mô tả, tên tác giả và các nhãn dán (badge) cho dễ đọc hơn',
+    ]
+  },
+  {
+    date: '16/06/2026',
+    items: [
+      'Thêm popup giới thiệu cách dùng web',
+      'Thêm nút Góp ý / Báo lỗi để mọi người gửi phản hồi trực tiếp',
+      'Thêm cảnh báo khi thêm truyện trùng cả tên và tác giả',
+      'Thêm tag "SE" (Sad Ending)',
+    ]
+  },
+  {
+    date: '15/06/2026',
+    items: [
+      'Thêm popup xem chi tiết truyện khi bấm vào thẻ',
+      'Bỏ thanh đánh giá độ ngọt, thêm ô tự thêm tag mới khi nhập truyện',
+    ]
+  },
+];
+
+function openChangelogModal() {
+  const list = document.getElementById('changelog-list');
+  list.innerHTML = CHANGELOG.map(entry => `
+    <div class="changelog-entry">
+      <div class="changelog-date">${entry.date}</div>
+      <ul>${entry.items.map(i => `<li>${i}</li>`).join('')}</ul>
+    </div>
+  `).join('');
+  document.getElementById('changelogModal').style.display = 'flex';
+}
+function closeChangelogModal() {
+  document.getElementById('changelogModal').style.display = 'none';
+}
+function closeWelcomeModal() {
+  document.getElementById('welcomeModal').style.display = 'none';
+  localStorage.setItem('truyen_welcome_seen', '1');
+}
+
+window.addEventListener('load', () => {
+  if (!localStorage.getItem('truyen_welcome_seen')) {
+    openWelcomeModal();
+  }
+});
+
+// ══════════════════════════════════════════
+// FEEDBACK
+// ══════════════════════════════════════════
+function openFeedbackModal() {
+  document.getElementById('feedback-form-wrap').style.display = 'block';
+  document.getElementById('feedback-success-wrap').style.display = 'none';
+  document.getElementById('feedback-content').value = '';
+  document.getElementById('feedback-error').textContent = '';
+  document.getElementById('feedbackModal').style.display = 'flex';
+}
+function closeFeedbackModal() {
+  document.getElementById('feedbackModal').style.display = 'none';
+}
+async function sendFeedback() {
+  const content = document.getElementById('feedback-content').value.trim();
+  const errEl = document.getElementById('feedback-error');
+  const btn = document.getElementById('feedback-submit-btn');
+  if (!content) { errEl.textContent = 'Bạn chưa viết gì cả!'; return; }
+
+  btn.disabled = true; btn.textContent = 'Đang gửi...';
+  try {
+    await sbFetch('feedbacks', {
+      method: 'POST',
+      prefer: 'return=minimal',
+      body: JSON.stringify({ content })
+    });
+    document.getElementById('feedback-form-wrap').style.display = 'none';
+    document.getElementById('feedback-success-wrap').style.display = 'block';
+  } catch(e) {
+    errEl.textContent = 'Gửi thất bại, thử lại nhé: ' + e.message;
+  } finally {
+    btn.disabled = false; btn.textContent = 'Gửi';
+  }
+}
+
+async function refreshSession() {
+  if (!session || !session.refresh_token) return false;
+  try {
+    const res = await fetch(SUPABASE_URL + '/auth/v1/token?grant_type=refresh_token', {
+      method: 'POST',
+      headers: { 'apikey': SUPABASE_KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ refresh_token: session.refresh_token })
+    });
+    if (!res.ok) return false;
+    const data = await res.json();
+    session = { access_token: data.access_token, refresh_token: data.refresh_token };
+    localStorage.setItem('truyen_session', JSON.stringify(session));
+    return true;
+  } catch(e) {
+    return false;
+  }
+}
+
+async function sbFetch(path, options = {}, _retried = false) {
+  const useAuthToken = isLoggedIn() && ['POST','PATCH','DELETE','PUT'].includes((options.method || 'GET').toUpperCase());
+  const res = await fetch(SUPABASE_URL + '/rest/v1/' + path, {
+    ...options,
+    headers: {
+      'apikey': SUPABASE_KEY,
+      'Authorization': 'Bearer ' + (useAuthToken ? session.access_token : SUPABASE_KEY),
+      'Content-Type': 'application/json',
+      'Prefer': options.prefer || '',
+      ...(options.headers || {}),
+    }
+  });
+  if (res.status === 401 && useAuthToken && !_retried) {
+    const refreshed = await refreshSession();
+    if (refreshed) {
+      updateAuthUI();
+      return sbFetch(path, options, true);
+    }
+    // Refresh thất bại → token thật sự hết hạn, đăng xuất và báo cho người dùng
+    session = null;
+    localStorage.removeItem('truyen_session');
+    updateAuthUI();
+    throw new Error('Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại nhé!');
+  }
+  if (!res.ok) {
+    const err = await res.text();
+    throw new Error(err);
+  }
+  const text = await res.text();
+  return text ? JSON.parse(text) : null;
+}
+
+async function loadNovels() {
+  try {
+    const data = await sbFetch('novels?order=created_at.desc&select=*');
+    novels = (data || []).map(n => ({
+      id: n.id,
+      title: n.title,
+      author: n.author,
+      chapters: n.chapters,
+      desc: n.description,
+      sweet: n.sweet,
+      tags: n.tags || [],
+      link: n.link,
+    }));
+
+    // Khôi phục các tag tùy chỉnh đã từng được thêm trước đó (lưu gián tiếp trong tags của truyện)
+    const allKnownTags = Object.values(TAGS).flat();
+    const customTagsFound = new Set();
+    novels.forEach(n => {
+      n.tags.forEach(t => {
+        if (!allKnownTags.includes(t)) customTagsFound.add(t);
+      });
+    });
+    if (customTagsFound.size > 0) {
+      customTagsFound.forEach(t => addNewTag(t, true));
+    }
+
+    render();
+  } catch(e) {
+    console.error('Load lỗi:', e);
+  }
+}
+
+// ══════════════════════════════════════════
+// BUILD FILTER UI
+// ══════════════════════════════════════════
+function buildFilters() {
+  for (const [cat, list] of Object.entries(TAGS)) {
+    const wrap = document.getElementById('f-' + cat);
+    if (wrap) {
+      list.forEach(t => {
+        const el = document.createElement('span');
+        el.className = 'ftag ' + cat;
+        el.textContent = t;
+        el.onclick = () => { el.classList.toggle('on'); active.has(t) ? active.delete(t) : active.add(t); render(); };
+        wrap.appendChild(el);
+      });
+    }
+
+    // Form checkboxes
+    const fw = document.getElementById('fc-' + cat);
+    if (!fw) continue;
+    list.forEach(t => {
+      const lbl = document.createElement('label');
+      lbl.className = 'ftag-check';
+      lbl.innerHTML = `<input type="checkbox" value="${t}"> ${t}`;
+      lbl.querySelector('input').onchange = function(){ lbl.classList.toggle('on', this.checked); };
+      fw.appendChild(lbl);
+    });
+  }
+}
+
+function clearAll() {
+  active.clear();
+  document.querySelectorAll('.ftag.on').forEach(e => e.classList.remove('on'));
+  document.getElementById('searchInput').value = '';
+  render();
+}
+
+// ══════════════════════════════════════════
+// MAIN MENU (Lọc / Thêm truyện) — 2 nút riêng
+// ══════════════════════════════════════════
+function openPanel(which) {
+  const filterBox = document.getElementById('filterBox');
+  const addSection = document.getElementById('addSection');
+  const btnFilter = document.getElementById('btn-filter');
+  const btnAdd = document.getElementById('btn-add');
+
+  if (which === 'filter') {
+    filterBox.classList.add('panel-open');
+    addSection.classList.remove('panel-open');
+    btnFilter.classList.add('active');
+    btnAdd.classList.remove('active');
+  } else {
+    addSection.classList.add('panel-open');
+    filterBox.classList.remove('panel-open');
+    btnAdd.classList.add('active');
+    btnFilter.classList.remove('active');
+  }
+  document.body.style.overflow = 'hidden';
+}
+function togglePanel(which) {
+  const box = which === 'filter' ? document.getElementById('filterBox') : document.getElementById('addSection');
+  const isOpen = box.classList.contains('panel-open');
+  if (isOpen) {
+    box.classList.remove('panel-open');
+    document.getElementById('btn-' + which).classList.remove('active');
+    document.body.style.overflow = '';
+  } else {
+    openPanel(which);
+  }
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    if (document.getElementById('filterBox').classList.contains('panel-open')) togglePanel('filter');
+    if (document.getElementById('addSection').classList.contains('panel-open')) togglePanel('add');
+  }
+});
+
+// ══════════════════════════════════════════
+// TAG COLOR HELPER
+// ══════════════════════════════════════════
+function tagColor(t) {
+  if (['HE','BE','SE','OE'].includes(t)) return 'ctag-pink';
+  if (['Ngọt văn','Ngọt sủng','Ngọt đậm','Ngọt nhạt','Ngọt đau','Slow burn ngọt'].includes(t)) return 'ctag-gold';
+  if (['Đam mỹ','BL'].includes(t)) return 'ctag-purple';
+  if (['Chinese','Korean','Japanese','Vietnamese','Thai'].includes(t)) return 'ctag-blue';
+  if (['Hoàn','Đang ra','Drop'].includes(t)) return 'ctag-green';
+  return 'ctag-purple';
+}
+
+function endingBadge(tags) {
+  for (const e of ['HE','BE','SE','OE']) {
+    if (tags.includes(e)) return `<span class="ending-badge ending-${e}">${e}</span>`;
+  }
+  return '';
+}
+function statusClass(tags) {
+  if (tags.includes('Hoàn')) return 's-hoan';
+  if (tags.includes('Đang ra')) return 's-dang';
+  return 's-drop';
+}
+function statusLabel(tags) {
+  if (tags.includes('Hoàn')) return 'Hoàn';
+  if (tags.includes('Đang ra')) return 'Đang ra';
+  return 'Drop';
+}
+function formatIcon(tags) {
+  if (tags.includes('Truyện tranh')) return '🎨';
+  if (tags.includes('Truyện chữ')) return '📖';
+  return '';
+}
+function formatBadge(tags) {
+  if (tags.includes('Truyện tranh')) return `<span class="format-badge format-tranh">🎨 Truyện tranh</span>`;
+  if (tags.includes('Truyện chữ')) return `<span class="format-badge format-chu">📖 Truyện chữ</span>`;
+  return '';
+}
+
+// ══════════════════════════════════════════
+// RENDER
+// ══════════════════════════════════════════
+function render() {
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  const sort = document.getElementById('sortSel').value;
+
+  let list = novels.filter(n => {
+    const ms = !q || n.title.toLowerCase().includes(q) || n.author.toLowerCase().includes(q) || n.desc.toLowerCase().includes(q);
+    const mt = [...active].every(t => n.tags.includes(t));
+    return ms && mt;
+  });
+
+  if (sort === 'title')    list.sort((a,b) => a.title.localeCompare(b.title,'vi'));
+  else if (sort === 'chapters') list.sort((a,b) => b.chapters - a.chapters);
+
+  // Stats
+  document.getElementById('s-total').textContent = novels.length;
+  document.getElementById('s-he').textContent = novels.filter(n=>n.tags.includes('HE')).length;
+  document.getElementById('s-be').textContent = novels.filter(n=>n.tags.includes('BE')).length;
+  document.getElementById('s-se').textContent = novels.filter(n=>n.tags.includes('SE')).length;
+  document.getElementById('s-oe').textContent = novels.filter(n=>n.tags.includes('OE')).length;
+
+  document.getElementById('resultCount').innerHTML =
+    `Hiển thị <strong>${list.length}</strong> / ${novels.length} bộ truyện`;
+
+  const grid = document.getElementById('novelGrid');
+  if (!list.length) {
+    grid.innerHTML = `<div class="empty"><span class="empty-icon">🌸</span><div class="empty-text">Không tìm thấy truyện phù hợp...</div></div>`;
+    return;
+  }
+
+  grid.innerHTML = list.map(n => {
+    const displayTags = n.tags.filter(t => !['Hoàn','Đang ra','Drop','Truyện chữ','Truyện tranh'].includes(t));
+    return `
+    <div class="novel-card" onclick="openDetailModal('${n.id}')" style="cursor:pointer">
+      <div class="card-header">
+        <div class="novel-title">${formatIcon(n.tags)} ${n.title}</div>
+        ${endingBadge(n.tags)}
+      </div>
+      <div class="novel-author">✒ ${n.author} · ${n.chapters} chương</div>
+      <div class="novel-desc">${n.desc}</div>
+      <div class="card-tags">
+        ${displayTags.map(t=>`<span class="ctag ${tagColor(t)}">${t}</span>`).join('')}
+      </div>
+      <div class="card-footer">
+        <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap">
+          <span class="status-badge ${statusClass(n.tags)}">${statusLabel(n.tags)}</span>
+          ${formatBadge(n.tags)}
+        </div>
+        <div style="display:flex;align-items:center;gap:0.7rem">
+          ${n.link && n.link !== '#'
+            ? `<a href="${n.link}" target="_blank" class="card-link">Đọc ngay →</a>`
+            : `<span style="opacity:0.3">—</span>`}
+          <button class="edit-btn owner-only" onclick="event.stopPropagation();editNovel('${n.id}', event)" title="Sửa truyện">✏️</button>
+          <button class="delete-btn owner-only" onclick="event.stopPropagation();deleteNovel('${n.id}', event)" title="Xoá truyện này">🗑</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════════
+// ADD NOVEL
+// ══════════════════════════════════════════
+async function addNovel() {
+  const title = document.getElementById('f-title').value.trim();
+  if (!title) { alert('Nhập tên truyện đi bạn ơi! 🌸'); return; }
+  const authorInput = document.getElementById('f-author').value.trim() || 'Chưa rõ';
+
+  // Check trùng cả tên truyện VÀ tên tác giả (chỉ áp dụng khi thêm mới)
+  const normalize = s => s.toLowerCase().trim().replace(/\s+/g, ' ');
+  const isDuplicate = novels.some(n =>
+    normalize(n.title) === normalize(title) &&
+    normalize(n.author) === normalize(authorInput) &&
+    String(n.id) !== String(editingId)
+  );
+  if (isDuplicate) {
+    alert('Truyện này (cùng tên + cùng tác giả) đã có trong thư viện rồi nha! 🌸 Kiểm tra lại xem có nhầm không nhé.');
+    return;
+  }
+
+  const author      = authorInput;
+  const chapters    = parseInt(document.getElementById('f-chapters').value) || 0;
+  const link        = document.getElementById('f-link').value.trim() || '';
+  const description = document.getElementById('f-desc').value.trim() || 'Chưa có mô tả.';
+  const sweet       = 5;
+  const tags        = [...document.querySelectorAll('.ftag-check input:checked')].map(c=>c.value);
+
+  const submitBtn = document.getElementById('submitBtn');
+  submitBtn.disabled = true;
+  submitBtn.textContent = '⏳ Đang lưu...';
+
+  try {
+    if (editingId !== null) {
+      // Chế độ sửa → PATCH
+      await sbFetch('novels?id=eq.' + editingId, {
+        method: 'PATCH',
+        prefer: 'return=minimal',
+        body: JSON.stringify({ title, author, chapters, description, sweet, tags, link })
+      });
+      editingId = null;
+      document.querySelector('.add-section').classList.remove('editing');
+    } else {
+      // Chế độ thêm mới → POST
+      await sbFetch('novels', {
+        method: 'POST',
+        prefer: 'return=minimal',
+        body: JSON.stringify({ title, author, chapters, description, sweet, tags, link })
+      });
+    }
+
+    ['f-title','f-author','f-chapters','f-link'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('f-desc').value = '';
+    document.querySelectorAll('.ftag-check input').forEach(c => { c.checked = false; c.parentElement.classList.remove('on'); });
+
+    await loadNovels();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch(e) {
+    alert('Lưu thất bại bồ ơi 😢 ' + e.message);
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = editingId !== null ? '💾 Cập nhật truyện' : '🌸 Thêm vào thư viện';
+  }
+}
+
+// ══════════════════════════════════════════
+// DELETE NOVEL
+// ══════════════════════════════════════════
+let pendingDeleteId = null;
+let editingId = null;
+
+
+// ══════════════════════════════════════════
+// DETAIL MODAL
+// ══════════════════════════════════════════
+function openDetailModal(id) {
+  const n = novels.find(n => String(n.id) === String(id));
+  if (!n) return;
+
+  const displayTags = n.tags.filter(t => !['Hoàn','Đang ra','Drop','Truyện chữ','Truyện tranh'].includes(t));
+
+  document.getElementById('detail-title').textContent = (formatIcon(n.tags) ? formatIcon(n.tags) + ' ' : '') + n.title;
+  document.getElementById('detail-author').textContent = '✒ ' + n.author;
+  document.getElementById('detail-desc').textContent = n.desc || 'Chưa có mô tả.';
+  document.getElementById('detail-chapters').textContent = '📖 ' + n.chapters + ' chương';
+
+  // Badges kết thúc + trạng thái + hình thức
+  const badgeEl = document.getElementById('detail-badges');
+  badgeEl.innerHTML = endingBadge(n.tags) + `<span class="status-badge ${statusClass(n.tags)}">${statusLabel(n.tags)}</span>` + formatBadge(n.tags);
+
+  // Tags
+  document.getElementById('detail-tags').innerHTML =
+    displayTags.map(t => `<span class="ctag ${tagColor(t)}">${t}</span>`).join('');
+
+  // Link
+  const linkEl = document.getElementById('detail-link');
+  if (n.link && n.link !== '#') {
+    linkEl.href = n.link;
+    linkEl.style.display = 'inline-block';
+  } else {
+    linkEl.style.display = 'none';
+  }
+
+  document.getElementById('detailModal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDetailModal() {
+  document.getElementById('detailModal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// Đóng bằng ESC
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeDetailModal();
+});
+
+// ══════════════════════════════════════════
+// EDIT NOVEL
+// ══════════════════════════════════════════
+function editNovel(id, e) {
+  e.stopPropagation();
+  const n = novels.find(n => String(n.id) === String(id));
+  if (!n) return;
+
+  editingId = n.id;
+
+  // Điền thông tin vào form
+  document.getElementById('f-title').value    = n.title;
+  document.getElementById('f-author').value   = n.author;
+  document.getElementById('f-chapters').value = n.chapters;
+  document.getElementById('f-link').value     = n.link || '';
+  document.getElementById('f-desc').value     = n.desc;
+
+  // Tick tags
+  document.querySelectorAll('.ftag-check input').forEach(cb => {
+    cb.checked = n.tags.includes(cb.value);
+    cb.parentElement.classList.toggle('on', cb.checked);
+  });
+
+  // Mở panel "Thêm truyện" (đang ẩn theo mặc định) để hiện form
+  openPanel('add');
+
+  // Đổi UI sang chế độ edit
+  document.querySelector('.add-section').classList.add('editing');
+  document.getElementById('submitBtn').textContent = '💾 Cập nhật truyện';
+
+  // Scroll xuống form
+  document.querySelector('.add-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function cancelEdit() {
+  editingId = null;
+  ['f-title','f-author','f-chapters','f-link'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('f-desc').value = '';
+  document.querySelectorAll('.ftag-check input').forEach(c => { c.checked = false; c.parentElement.classList.remove('on'); });
+  document.querySelector('.add-section').classList.remove('editing');
+  document.getElementById('submitBtn').textContent = '🌸 Thêm vào thư viện';
+}
+
+function deleteNovel(id, e) {
+  e.stopPropagation();
+  const novel = novels.find(n => String(n.id) === String(id));
+  if (!novel) return;
+  pendingDeleteId = novel.id;
+  document.getElementById('modal-title').textContent = `Xoá "${novel.title}"?`;
+  document.getElementById('deleteModal').style.display = 'flex';
+}
+
+function closeModal() {
+  document.getElementById('deleteModal').style.display = 'none';
+  pendingDeleteId = null;
+}
+
+async function confirmDelete() {
+  if (pendingDeleteId === null) return;
+  try {
+    await sbFetch('novels?id=eq.' + pendingDeleteId, {
+      method: 'DELETE',
+    });
+    closeModal();
+    await loadNovels();
+  } catch(e) {
+    alert('Xoá thất bại 😢 ' + e.message);
+  }
+}
+
+// ══════════════════════════════════════════
+// TAB SWITCH
+// ══════════════════════════════════════════
+function switchTab(tab) {
+  document.getElementById('panel-link').style.display = tab === 'link' ? '' : 'none';
+  document.getElementById('panel-text').style.display = tab === 'text' ? '' : 'none';
+  document.getElementById('tab-link').classList.toggle('active', tab === 'link');
+  document.getElementById('tab-text').classList.toggle('active', tab === 'text');
+  document.getElementById('fetch-status').className = 'fetch-status';
+  document.getElementById('fetch-status').textContent = '';
+}
+
+// ══════════════════════════════════════════
+// AI AUTO-FILL FROM PASTED TEXT
+// ══════════════════════════════════════════
+async function fetchFromText() {
+  const rawText = document.getElementById('f-pastetext').value.trim();
+  if (!rawText || rawText.length < 20) {
+    setStatus('error', '⚠️ Dán nội dung trang truyện vào trước nhé!');
+    return;
+  }
+
+  const btn = document.getElementById('fetchBtnText');
+  btn.disabled = true;
+  setStatus('loading', '🤖 AI đang phân tích nội dung...');
+
+  const allTags = Object.values(TAGS).flat();
+
+  const prompt = `Bạn là trợ lý tổng hợp truyện đam mỹ/BL tiếng Việt. Dưới đây là nội dung được copy từ một trang truyện. Hãy phân tích và trích xuất thông tin.
+
+NỘI DUNG TRANG:
+---
+${rawText.slice(0, 4000)}
+---
+
+Trả về JSON với đúng format sau (KHÔNG thêm gì khác, chỉ JSON thuần):
+{
+  "title": "tên truyện chính xác từ nội dung",
+  "author": "tên tác giả",
+  "chapters": 0,
+  "desc": "mô tả/giới thiệu truyện NGUYÊN VĂN hoặc dịch sát nhất có thể từ nội dung, 3-5 câu",
+  "sweet": 7,
+  "tags": [],
+  "new_tags": [],
+  "link": ""
+}
+
+Quy tắc:
+- "desc" phải lấy ĐÚNG từ phần giới thiệu/synopsis trong nội dung, không tự bịa
+- Ưu tiên chọn tags từ danh sách có sẵn: ${allTags.join(', ')}
+- Nếu truyện có tag quan trọng KHÔNG có trong danh sách trên, thêm vào "new_tags" (tối đa 5 tag mới, ngắn gọn tiếng Việt)
+- HE = happy ending, BE = bad ending, OE = open ending
+- sweet 1-10: 10 = cực ngọt không ngược, 1 = BE/rất ngược
+- Tình trạng: Hoàn / Đang ra / Drop
+- Nguồn: Chinese / Korean / Japanese / Vietnamese / Thai
+- Thêm trường "new_tags": [] vào JSON cho các tag mới chưa có trong danh sách`;
+
+  try {
+    const apiRes = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-6',
+        max_tokens: 1000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const apiData = await apiRes.json();
+    const text = (apiData.content || []).filter(b => b.type === 'text').map(b => b.text).join('');
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) throw new Error('parse fail');
+
+    const info = JSON.parse(jsonMatch[0]);
+
+    document.getElementById('f-title').value    = info.title    || '';
+    document.getElementById('f-author').value   = info.author   || '';
+    document.getElementById('f-chapters').value = info.chapters || '';
+    document.getElementById('f-desc').value     = info.desc     || '';
+    document.getElementById('f-link').value     = info.link     || '';
+
+    // Thêm tag mới vào hệ thống nếu có
+    const newTags = info.new_tags || [];
+    newTags.forEach(t => addNewTag(t));
+
+    // Tick tất cả tags (cũ + mới)
+    document.querySelectorAll('.ftag-check input').forEach(cb => {
+      cb.checked = (info.tags || []).includes(cb.value) || newTags.includes(cb.value);
+      cb.parentElement.classList.toggle('on', cb.checked);
+    });
+
+    const newTagMsg = newTags.length ? ` Thêm ${newTags.length} tag mới: ${newTags.join(', ')}` : '';
+    setStatus('success', `✅ Xong! Kiểm tra lại mô tả rồi bấm "Thêm vào thư viện" nhé~${newTagMsg}`);
+  } catch(e) {
+    setStatus('error', '❌ AI không phân tích được. Thử copy lại nhiều nội dung hơn nha!');
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+// ══════════════════════════════════════════
+// AI AUTO-FILL FROM LINK
+// ══════════════════════════════════════════
+async function fetchFromLink() {
+  const url = document.getElementById('f-autolink').value.trim();
+  if (!url || !url.startsWith('http')) {
+    setStatus('error', '⚠️ Vui lòng dán link hợp lệ bắt đầu bằng https://...');
+    return;
+  }
+
+  const btn = document.getElementById('fetchBtn');
+  btn.disabled = true;
+  setStatus('loading', '🤖 Đang đọc trang truyện...');
+
+  const allTags = Object.values(TAGS).flat();
+
+  try {
+    // Dùng AllOrigins proxy để đọc nội dung trang
+    // Thử lần lượt các proxy
+    let rawHtml = '';
+    const proxies = [
+      'https://corsproxy.io/?' + encodeURIComponent(url),
+      'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(url),
+    ];
+    for (const proxyUrl of proxies) {
+      try {
+        const proxyRes = await fetch(proxyUrl);
+        if (proxyRes.ok) {
+          rawHtml = await proxyRes.text();
+          if (rawHtml.length > 100) break;
+        }
+      } catch(e) { continue; }
+    }
+
+    // Lấy text từ HTML, bỏ tags
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(rawHtml, 'text/html');
+    // Xóa script, style
+    doc.querySelectorAll('script, style, nav, footer, header').forEach(e => e.remove());
+    const pageText = doc.body?.innerText || doc.body?.textContent || '';
+    const cleanText = pageText.replace(/\s+/g, ' ').trim().slice(0, 5000);
+
+    if (!cleanText || cleanText.length < 50) throw new Error('Không đọc được nội dung');
+
+    setStatus('loading', '🤖 AI đang phân tích nội dung...');
+
+    // Gọi Anthropic API (chạy trong Claude artifact)
+    const prompt = `Bạn là trợ lý tổng hợp truyện đam mỹ/BL tiếng Việt. Dưới đây là nội dung trang truyện. Hãy trích xuất thông tin.
+
+NỘI DUNG:
+---
+${cleanText}
+---
+URL gốc: ${url}
+
+Trả về JSON thuần (không markdown, không backtick):
+{
+  "title": "tên truyện chính xác",
+  "author": "tên tác giả",
+  "chapters": 0,
+  "desc": "mô tả/tóm tắt NGUYÊN VĂN từ trang, 3-5 câu",
+  "sweet": 7,
+  "tags": [],
+  "new_tags": [],
+  "link": "${url}"
+}
+
+Quy tắc:
+- desc phải lấy ĐÚNG từ phần tóm tắt/giới thiệu, không tự bịa
+- Ưu tiên tags từ danh sách: ${allTags.join(', ')}
+- new_tags: tối đa 5 tag mới quan trọng chưa có trong danh sách
+- HE/BE/OE = kết thúc, sweet 1-10, Hoàn/Đang ra/Drop = tình trạng
+- Nguồn: Chinese/Korean/Japanese/Vietnamese/Thai`;
+
+    const apiRes = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-6',
+        max_tokens: 1000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const apiData = await apiRes.json();
+    const text = (apiData.content || []).filter(b => b.type === 'text').map(b => b.text).join('');
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) throw new Error('parse fail');
+    const info = JSON.parse(jsonMatch[0]);
+
+    document.getElementById('f-title').value    = info.title    || '';
+    document.getElementById('f-author').value   = info.author   || '';
+    document.getElementById('f-chapters').value = info.chapters || '';
+    document.getElementById('f-desc').value     = info.desc     || '';
+    document.getElementById('f-link').value     = info.link     || url;
+
+    const newTags = info.new_tags || [];
+    newTags.forEach(t => addNewTag(t));
+    document.querySelectorAll('.ftag-check input').forEach(cb => {
+      cb.checked = (info.tags || []).includes(cb.value) || newTags.includes(cb.value);
+      cb.parentElement.classList.toggle('on', cb.checked);
+    });
+
+    const newTagMsg = newTags.length ? ` Thêm ${newTags.length} tag mới: ${newTags.join(', ')}` : '';
+    setStatus('success', `✅ Đã điền xong! Kiểm tra lại rồi bấm "Thêm vào thư viện" nhé~${newTagMsg}`);
+  } catch(e) {
+    setStatus('error', '❌ Không đọc được trang này. Bồ thử tab "Dán nội dung trang" nhé!');
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+// ══════════════════════════════════════════
+// ADD NEW TAG DYNAMICALLY
+// ══════════════════════════════════════════
+function addNewTag(tag, fromRestore = false) {
+  tag = tag.trim();
+  if (!tag) return;
+  const allExisting = Object.values(TAGS).flat();
+  if (allExisting.includes(tag)) return; // đã có rồi
+
+  // Thêm vào data
+  TAGS['the-loai'].push(tag);
+
+  // Thêm vào bộ lọc filter UI
+  const filterWrap = document.getElementById('f-the-loai');
+  const el = document.createElement('span');
+  el.className = 'ftag the-loai';
+  el.textContent = tag;
+  el.onclick = () => { el.classList.toggle('on'); active.has(tag) ? active.delete(tag) : active.add(tag); render(); };
+  filterWrap.appendChild(el);
+
+  // Thêm vào form checkbox
+  const formWrap = document.getElementById('fc-the-loai');
+  const lbl = document.createElement('label');
+  lbl.className = 'ftag-check';
+  lbl.innerHTML = `<input type="checkbox" value="${tag}"> ${tag}`;
+  lbl.querySelector('input').onchange = function(){ lbl.classList.toggle('on', this.checked); };
+  formWrap.appendChild(lbl);
+}
+
+// ══════════════════════════════════════════
+// CUSTOM TAG TỰ THÊM
+// ══════════════════════════════════════════
+function addCustomTag() {
+  const input = document.getElementById('custom-tag-input');
+  const tag = input.value.trim();
+  if (!tag) return;
+  addNewTag(tag);
+
+  // Auto-check tag vừa thêm
+  document.querySelectorAll('.ftag-check input').forEach(cb => {
+    if (cb.value === tag) {
+      cb.checked = true;
+      cb.parentElement.classList.add('on');
+    }
+  });
+
+  input.value = '';
+  input.focus();
+}
+
+function setStatus(type, msg) {
+  const el = document.getElementById('fetch-status');
+  el.className = 'fetch-status ' + type;
+  el.textContent = msg;
+}
+
+// ══════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════
+document.getElementById('searchInput').addEventListener('input', render);
+buildFilters();
+updateAuthUI();
+loadNovels();
+window.addEventListener('load', updateAuthUI);
+</script>
+<!-- CONFIRM MODAL -->
+<div class="modal-overlay" id="deleteModal" style="display:none" onclick="closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-icon">🗑️</div>
+    <div class="modal-title" id="modal-title">Xoá truyện này?</div>
+    <div class="modal-sub" id="modal-sub">Truyện sẽ biến mất khỏi thư viện. Không hoàn tác được nhé!</div>
+    <div class="modal-actions">
+      <button class="modal-cancel" onclick="closeModal()">Thôi, giữ lại</button>
+      <button class="modal-confirm" onclick="confirmDelete()">Xoá luôn</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="detail-overlay" id="detailModal" style="display:none" onclick="closeDetailModal()">
+  <div class="detail-box" onclick="event.stopPropagation()">
+    <button class="detail-close" onclick="closeDetailModal()">✕</button>
+    <div class="detail-badge-row" id="detail-badges"></div>
+    <div class="detail-title" id="detail-title"></div>
+    <div class="detail-author" id="detail-author"></div>
+    <div class="detail-desc" id="detail-desc"></div>
+    <div class="detail-tags" id="detail-tags"></div>
+    <div class="detail-footer">
+      <span class="detail-chapters" id="detail-chapters"></span>
+      <a href="#" id="detail-link" class="detail-link" target="_blank">Đọc ngay →</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="auth-corner">
+  <button class="changelog-btn" onclick="openChangelogModal()">📋 Cập nhật</button>
+  <button class="info-btn" onclick="openWelcomeModal()">ℹ️ Giới thiệu</button>
+  <button class="feedback-btn" onclick="openFeedbackModal()">💬 Góp ý</button>
+  <button class="login-btn" id="loginBtn" onclick="openAuthModal()">🔒 Đăng nhập</button>
+</div>
+
+<div class="auth-overlay" id="changelogModal" style="display:none" onclick="if(event.target===this) closeChangelogModal()">
+  <div class="auth-box changelog-box" onclick="event.stopPropagation()">
+    <div class="changelog-title">📋 Nhật ký cập nhật</div>
+    <div id="changelog-list"></div>
+    <button class="changelog-close-btn" onclick="closeChangelogModal()">Đóng</button>
+  </div>
+</div>
+
+<div class="auth-overlay" id="welcomeModal" style="display:none" onclick="if(event.target===this) closeWelcomeModal()">
+  <div class="auth-box welcome-box" onclick="event.stopPropagation()">
+    <div class="welcome-title">🌸 Chào mừng đến với web ngựa ngựa của mình</div>
+
+    <div class="welcome-section">
+      <div class="welcome-section-title">📖 Đây là gì?</div>
+      <p>Đây là nơi lưu trữ và tổng hợp các bộ truyện đã hoàn theo tiếng Việt mà mọi người yêu thích, giúp bạn dễ dàng tìm và theo dõi truyện theo sở thích của riêng mình.</p>
+    </div>
+
+    <div class="welcome-section">
+      <div class="welcome-section-title">🔍 Cách sử dụng</div>
+      <ul>
+        <li>Gõ vào ô tìm kiếm để lọc theo tên truyện, tác giả hoặc mô tả</li>
+        <li>Bấm vào các tag (Kết thúc, Thể loại, Nguồn gốc...) để lọc truyện theo sở thích</li>
+        <li>Bấm vào 1 thẻ truyện để xem đầy đủ thông tin và mô tả</li>
+        <li>Cuộn xuống cuối trang để tự thêm truyện mới vào thư viện bằng thủ công nhé (Điền tay tên truyện, tác giả,...) vì hiện tại dán link để nhảy ra thông tin mình chưa thể làm được nên hẹn vào tương lai gần nhé!</li>
+      </ul>
+    </div>
+
+    <div class="welcome-section">
+      <div class="welcome-section-title">📋 Một vài điều lệ nhỏ</div>
+      <ul>
+        <li>Môi trường siêu lành mạnh, healing chill chill đồ nên cấm các con vợ mang sự toxic vào đây nhé.</li>
+        <li>Không spam, không thêm các nội dung được tạo bởi AI, đạo văn. Nếu mọi người thấy sự xuất hiện của nó thì báo mình, mình cho cook nhé.</li>
+        <li>Tôn trọng tác giả, editor, thêm truyện dẫn link của nhà editor vào, không có các mom có thể dẫn link "raw" hoặc "để trống" nhé.</li>
+        <li>Vì đây lây là công ty TNHH 1 thành viên (có sự hỗ trợ của anh tài Claude, Chat GPT và những người bạn tư vấn cho mình nên mình mới có thể làm được 1 web này và share cho mọi người. Chắc chắn không thể không mắc sai lầm được rồi nên có gì mọi người hoan hỉ gửi góp ý để cho mình biết và khắc phục nhé.</li>
+        <li>Có lỗi gì hoặc góp ý, hãy dùng nút 💬 Góp ý để báo cho admin nhé!</li>
+      </ul>
+    </div>
+
+    <button class="welcome-close-btn" onclick="closeWelcomeModal()">Đã hiểu, bắt đầu khám phá! 🌸</button>
+  </div>
+</div>
+
+<div class="auth-overlay" id="feedbackModal" style="display:none" onclick="if(event.target===this) closeFeedbackModal()">
+  <div class="auth-box feedback-box" onclick="event.stopPropagation()">
+    <div id="feedback-form-wrap">
+      <div class="auth-title">💬 Góp ý / Báo lỗi</div>
+      <textarea class="fi" id="feedback-content" placeholder="Bạn gặp lỗi gì, hay muốn góp ý gì cho app không?"></textarea>
+      <div class="auth-error" id="feedback-error"></div>
+      <div class="auth-actions">
+        <button class="auth-cancel" onclick="closeFeedbackModal()">Huỷ</button>
+        <button class="auth-submit" id="feedback-submit-btn" onclick="sendFeedback()">Gửi</button>
+      </div>
+    </div>
+    <div id="feedback-success-wrap" style="display:none">
+      <div class="feedback-success">🌸 Đã gửi rồi nhé, cảm ơn bạn!</div>
+      <div class="auth-actions">
+        <button class="auth-submit" onclick="closeFeedbackModal()">Đóng</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="auth-overlay" id="authModal" style="display:none" onclick="if(event.target===this) closeAuthModal()">
+  <div class="auth-box" onclick="event.stopPropagation()">
+    <div class="auth-title">🔒 Đăng nhập</div>
+    <input class="fi" id="auth-email" type="email" placeholder="Email">
+    <input class="fi" id="auth-password" type="password" placeholder="Mật khẩu" onkeydown="if(event.key==='Enter')doLogin()">
+    <div class="auth-error" id="auth-error"></div>
+    <div class="auth-actions">
+      <button class="auth-cancel" onclick="closeAuthModal()">Huỷ</button>
+      <button class="auth-submit" id="auth-submit-btn" onclick="doLogin()">Đăng nhập</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
